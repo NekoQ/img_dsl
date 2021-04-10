@@ -50,6 +50,18 @@ type ImgListener interface {
 	// EnterResize is called when entering the resize production.
 	EnterResize(c *ResizeContext)
 
+	// EnterBrightness is called when entering the brightness production.
+	EnterBrightness(c *BrightnessContext)
+
+	// EnterContrast is called when entering the contrast production.
+	EnterContrast(c *ContrastContext)
+
+	// EnterSaturation is called when entering the saturation production.
+	EnterSaturation(c *SaturationContext)
+
+	// EnterPixelate is called when entering the pixelate production.
+	EnterPixelate(c *PixelateContext)
+
 	// EnterExport is called when entering the export production.
 	EnterExport(c *ExportContext)
 
@@ -94,6 +106,18 @@ type ImgListener interface {
 
 	// ExitResize is called when exiting the resize production.
 	ExitResize(c *ResizeContext)
+
+	// ExitBrightness is called when exiting the brightness production.
+	ExitBrightness(c *BrightnessContext)
+
+	// ExitContrast is called when exiting the contrast production.
+	ExitContrast(c *ContrastContext)
+
+	// ExitSaturation is called when exiting the saturation production.
+	ExitSaturation(c *SaturationContext)
+
+	// ExitPixelate is called when exiting the pixelate production.
+	ExitPixelate(c *PixelateContext)
 
 	// ExitExport is called when exiting the export production.
 	ExitExport(c *ExportContext)

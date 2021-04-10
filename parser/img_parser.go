@@ -16,74 +16,90 @@ var _ = reflect.Copy
 var _ = strconv.Itoa
 
 var parserATN = []uint16{
-	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 22, 133,
+	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 26, 165,
 	4, 2, 9, 2, 4, 3, 9, 3, 4, 4, 9, 4, 4, 5, 9, 5, 4, 6, 9, 6, 4, 7, 9, 7,
 	4, 8, 9, 8, 4, 9, 9, 9, 4, 10, 9, 10, 4, 11, 9, 11, 4, 12, 9, 12, 4, 13,
-	9, 13, 4, 14, 9, 14, 4, 15, 9, 15, 4, 16, 9, 16, 3, 2, 6, 2, 34, 10, 2,
-	13, 2, 14, 2, 35, 3, 2, 7, 2, 39, 10, 2, 12, 2, 14, 2, 42, 11, 2, 3, 2,
-	3, 2, 3, 2, 3, 3, 3, 3, 5, 3, 49, 10, 3, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4,
-	3, 4, 3, 4, 3, 4, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5,
-	3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 7, 3, 7, 3, 8, 3, 8, 3, 8, 3, 8,
-	3, 9, 3, 9, 3, 9, 3, 9, 3, 9, 3, 10, 3, 10, 3, 10, 3, 10, 3, 10, 5, 10,
-	90, 10, 10, 3, 11, 3, 11, 3, 11, 3, 11, 3, 11, 3, 11, 3, 11, 3, 11, 3,
-	11, 3, 11, 3, 11, 3, 12, 3, 12, 3, 12, 3, 12, 3, 12, 3, 13, 3, 13, 3, 13,
-	3, 13, 3, 14, 3, 14, 3, 14, 3, 14, 3, 15, 3, 15, 3, 15, 3, 15, 3, 15, 5,
-	15, 121, 10, 15, 3, 15, 3, 15, 3, 16, 3, 16, 3, 16, 3, 16, 3, 16, 3, 16,
-	3, 16, 3, 16, 3, 16, 2, 2, 17, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22,
-	24, 26, 28, 30, 2, 3, 3, 2, 3, 4, 2, 125, 2, 33, 3, 2, 2, 2, 4, 48, 3,
-	2, 2, 2, 6, 50, 3, 2, 2, 2, 8, 58, 3, 2, 2, 2, 10, 67, 3, 2, 2, 2, 12,
-	73, 3, 2, 2, 2, 14, 75, 3, 2, 2, 2, 16, 79, 3, 2, 2, 2, 18, 89, 3, 2, 2,
-	2, 20, 91, 3, 2, 2, 2, 22, 102, 3, 2, 2, 2, 24, 107, 3, 2, 2, 2, 26, 111,
-	3, 2, 2, 2, 28, 115, 3, 2, 2, 2, 30, 124, 3, 2, 2, 2, 32, 34, 5, 4, 3,
-	2, 33, 32, 3, 2, 2, 2, 34, 35, 3, 2, 2, 2, 35, 33, 3, 2, 2, 2, 35, 36,
-	3, 2, 2, 2, 36, 40, 3, 2, 2, 2, 37, 39, 5, 16, 9, 2, 38, 37, 3, 2, 2, 2,
-	39, 42, 3, 2, 2, 2, 40, 38, 3, 2, 2, 2, 40, 41, 3, 2, 2, 2, 41, 43, 3,
-	2, 2, 2, 42, 40, 3, 2, 2, 2, 43, 44, 5, 30, 16, 2, 44, 45, 7, 2, 2, 3,
-	45, 3, 3, 2, 2, 2, 46, 49, 5, 6, 4, 2, 47, 49, 5, 8, 5, 2, 48, 46, 3, 2,
-	2, 2, 48, 47, 3, 2, 2, 2, 49, 5, 3, 2, 2, 2, 50, 51, 7, 21, 2, 2, 51, 52,
-	7, 11, 2, 2, 52, 53, 7, 19, 2, 2, 53, 54, 7, 16, 2, 2, 54, 55, 5, 10, 6,
-	2, 55, 56, 7, 17, 2, 2, 56, 57, 7, 15, 2, 2, 57, 7, 3, 2, 2, 2, 58, 59,
-	7, 21, 2, 2, 59, 60, 7, 18, 2, 2, 60, 61, 7, 11, 2, 2, 61, 62, 7, 19, 2,
-	2, 62, 63, 7, 16, 2, 2, 63, 64, 5, 14, 8, 2, 64, 65, 7, 17, 2, 2, 65, 66,
-	7, 15, 2, 2, 66, 9, 3, 2, 2, 2, 67, 68, 7, 14, 2, 2, 68, 69, 7, 21, 2,
-	2, 69, 70, 7, 12, 2, 2, 70, 71, 5, 12, 7, 2, 71, 72, 7, 14, 2, 2, 72, 11,
-	3, 2, 2, 2, 73, 74, 9, 2, 2, 2, 74, 13, 3, 2, 2, 2, 75, 76, 7, 14, 2, 2,
-	76, 77, 7, 21, 2, 2, 77, 78, 7, 14, 2, 2, 78, 15, 3, 2, 2, 2, 79, 80, 7,
-	21, 2, 2, 80, 81, 7, 12, 2, 2, 81, 82, 5, 18, 10, 2, 82, 83, 7, 15, 2,
-	2, 83, 17, 3, 2, 2, 2, 84, 90, 5, 20, 11, 2, 85, 90, 5, 22, 12, 2, 86,
-	90, 5, 24, 13, 2, 87, 90, 5, 26, 14, 2, 88, 90, 5, 28, 15, 2, 89, 84, 3,
-	2, 2, 2, 89, 85, 3, 2, 2, 2, 89, 86, 3, 2, 2, 2, 89, 87, 3, 2, 2, 2, 89,
-	88, 3, 2, 2, 2, 90, 19, 3, 2, 2, 2, 91, 92, 7, 5, 2, 2, 92, 93, 7, 16,
-	2, 2, 93, 94, 7, 20, 2, 2, 94, 95, 7, 13, 2, 2, 95, 96, 7, 20, 2, 2, 96,
-	97, 7, 13, 2, 2, 97, 98, 7, 20, 2, 2, 98, 99, 7, 13, 2, 2, 99, 100, 7,
-	20, 2, 2, 100, 101, 7, 17, 2, 2, 101, 21, 3, 2, 2, 2, 102, 103, 7, 6, 2,
-	2, 103, 104, 7, 16, 2, 2, 104, 105, 7, 20, 2, 2, 105, 106, 7, 17, 2, 2,
-	106, 23, 3, 2, 2, 2, 107, 108, 7, 7, 2, 2, 108, 109, 7, 16, 2, 2, 109,
-	110, 7, 17, 2, 2, 110, 25, 3, 2, 2, 2, 111, 112, 7, 8, 2, 2, 112, 113,
-	7, 16, 2, 2, 113, 114, 7, 17, 2, 2, 114, 27, 3, 2, 2, 2, 115, 116, 7, 9,
-	2, 2, 116, 117, 7, 16, 2, 2, 117, 120, 7, 20, 2, 2, 118, 119, 7, 13, 2,
-	2, 119, 121, 7, 20, 2, 2, 120, 118, 3, 2, 2, 2, 120, 121, 3, 2, 2, 2, 121,
-	122, 3, 2, 2, 2, 122, 123, 7, 17, 2, 2, 123, 29, 3, 2, 2, 2, 124, 125,
-	7, 21, 2, 2, 125, 126, 7, 12, 2, 2, 126, 127, 7, 10, 2, 2, 127, 128, 7,
-	16, 2, 2, 128, 129, 5, 10, 6, 2, 129, 130, 7, 17, 2, 2, 130, 131, 7, 15,
-	2, 2, 131, 31, 3, 2, 2, 2, 7, 35, 40, 48, 89, 120,
+	9, 13, 4, 14, 9, 14, 4, 15, 9, 15, 4, 16, 9, 16, 4, 17, 9, 17, 4, 18, 9,
+	18, 4, 19, 9, 19, 4, 20, 9, 20, 3, 2, 6, 2, 42, 10, 2, 13, 2, 14, 2, 43,
+	3, 2, 7, 2, 47, 10, 2, 12, 2, 14, 2, 50, 11, 2, 3, 2, 3, 2, 3, 2, 3, 3,
+	3, 3, 5, 3, 57, 10, 3, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4,
+	3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 6, 3, 6, 3, 6,
+	3, 6, 3, 6, 3, 6, 3, 7, 3, 7, 3, 8, 3, 8, 3, 8, 3, 8, 3, 9, 3, 9, 3, 9,
+	3, 9, 3, 9, 3, 10, 3, 10, 3, 10, 3, 10, 3, 10, 3, 10, 3, 10, 3, 10, 3,
+	10, 5, 10, 102, 10, 10, 3, 11, 3, 11, 3, 11, 3, 11, 3, 11, 3, 11, 3, 11,
+	3, 11, 3, 11, 3, 11, 3, 11, 3, 12, 3, 12, 3, 12, 3, 12, 3, 12, 3, 13, 3,
+	13, 3, 13, 3, 13, 3, 14, 3, 14, 3, 14, 3, 14, 3, 15, 3, 15, 3, 15, 3, 15,
+	3, 15, 5, 15, 133, 10, 15, 3, 15, 3, 15, 3, 16, 3, 16, 3, 16, 3, 16, 3,
+	16, 3, 17, 3, 17, 3, 17, 3, 17, 3, 17, 3, 18, 3, 18, 3, 18, 3, 18, 3, 18,
+	3, 19, 3, 19, 3, 19, 3, 19, 3, 19, 3, 20, 3, 20, 3, 20, 3, 20, 3, 20, 3,
+	20, 3, 20, 3, 20, 3, 20, 2, 2, 21, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20,
+	22, 24, 26, 28, 30, 32, 34, 36, 38, 2, 3, 3, 2, 3, 4, 2, 157, 2, 41, 3,
+	2, 2, 2, 4, 56, 3, 2, 2, 2, 6, 58, 3, 2, 2, 2, 8, 66, 3, 2, 2, 2, 10, 75,
+	3, 2, 2, 2, 12, 81, 3, 2, 2, 2, 14, 83, 3, 2, 2, 2, 16, 87, 3, 2, 2, 2,
+	18, 101, 3, 2, 2, 2, 20, 103, 3, 2, 2, 2, 22, 114, 3, 2, 2, 2, 24, 119,
+	3, 2, 2, 2, 26, 123, 3, 2, 2, 2, 28, 127, 3, 2, 2, 2, 30, 136, 3, 2, 2,
+	2, 32, 141, 3, 2, 2, 2, 34, 146, 3, 2, 2, 2, 36, 151, 3, 2, 2, 2, 38, 156,
+	3, 2, 2, 2, 40, 42, 5, 4, 3, 2, 41, 40, 3, 2, 2, 2, 42, 43, 3, 2, 2, 2,
+	43, 41, 3, 2, 2, 2, 43, 44, 3, 2, 2, 2, 44, 48, 3, 2, 2, 2, 45, 47, 5,
+	16, 9, 2, 46, 45, 3, 2, 2, 2, 47, 50, 3, 2, 2, 2, 48, 46, 3, 2, 2, 2, 48,
+	49, 3, 2, 2, 2, 49, 51, 3, 2, 2, 2, 50, 48, 3, 2, 2, 2, 51, 52, 5, 38,
+	20, 2, 52, 53, 7, 2, 2, 3, 53, 3, 3, 2, 2, 2, 54, 57, 5, 6, 4, 2, 55, 57,
+	5, 8, 5, 2, 56, 54, 3, 2, 2, 2, 56, 55, 3, 2, 2, 2, 57, 5, 3, 2, 2, 2,
+	58, 59, 7, 25, 2, 2, 59, 60, 7, 15, 2, 2, 60, 61, 7, 23, 2, 2, 61, 62,
+	7, 20, 2, 2, 62, 63, 5, 10, 6, 2, 63, 64, 7, 21, 2, 2, 64, 65, 7, 19, 2,
+	2, 65, 7, 3, 2, 2, 2, 66, 67, 7, 25, 2, 2, 67, 68, 7, 22, 2, 2, 68, 69,
+	7, 15, 2, 2, 69, 70, 7, 23, 2, 2, 70, 71, 7, 20, 2, 2, 71, 72, 5, 14, 8,
+	2, 72, 73, 7, 21, 2, 2, 73, 74, 7, 19, 2, 2, 74, 9, 3, 2, 2, 2, 75, 76,
+	7, 18, 2, 2, 76, 77, 7, 25, 2, 2, 77, 78, 7, 16, 2, 2, 78, 79, 5, 12, 7,
+	2, 79, 80, 7, 18, 2, 2, 80, 11, 3, 2, 2, 2, 81, 82, 9, 2, 2, 2, 82, 13,
+	3, 2, 2, 2, 83, 84, 7, 18, 2, 2, 84, 85, 7, 25, 2, 2, 85, 86, 7, 18, 2,
+	2, 86, 15, 3, 2, 2, 2, 87, 88, 7, 25, 2, 2, 88, 89, 7, 16, 2, 2, 89, 90,
+	5, 18, 10, 2, 90, 91, 7, 19, 2, 2, 91, 17, 3, 2, 2, 2, 92, 102, 5, 20,
+	11, 2, 93, 102, 5, 22, 12, 2, 94, 102, 5, 24, 13, 2, 95, 102, 5, 26, 14,
+	2, 96, 102, 5, 28, 15, 2, 97, 102, 5, 30, 16, 2, 98, 102, 5, 32, 17, 2,
+	99, 102, 5, 34, 18, 2, 100, 102, 5, 36, 19, 2, 101, 92, 3, 2, 2, 2, 101,
+	93, 3, 2, 2, 2, 101, 94, 3, 2, 2, 2, 101, 95, 3, 2, 2, 2, 101, 96, 3, 2,
+	2, 2, 101, 97, 3, 2, 2, 2, 101, 98, 3, 2, 2, 2, 101, 99, 3, 2, 2, 2, 101,
+	100, 3, 2, 2, 2, 102, 19, 3, 2, 2, 2, 103, 104, 7, 5, 2, 2, 104, 105, 7,
+	20, 2, 2, 105, 106, 7, 24, 2, 2, 106, 107, 7, 17, 2, 2, 107, 108, 7, 24,
+	2, 2, 108, 109, 7, 17, 2, 2, 109, 110, 7, 24, 2, 2, 110, 111, 7, 17, 2,
+	2, 111, 112, 7, 24, 2, 2, 112, 113, 7, 21, 2, 2, 113, 21, 3, 2, 2, 2, 114,
+	115, 7, 6, 2, 2, 115, 116, 7, 20, 2, 2, 116, 117, 7, 24, 2, 2, 117, 118,
+	7, 21, 2, 2, 118, 23, 3, 2, 2, 2, 119, 120, 7, 7, 2, 2, 120, 121, 7, 20,
+	2, 2, 121, 122, 7, 21, 2, 2, 122, 25, 3, 2, 2, 2, 123, 124, 7, 8, 2, 2,
+	124, 125, 7, 20, 2, 2, 125, 126, 7, 21, 2, 2, 126, 27, 3, 2, 2, 2, 127,
+	128, 7, 9, 2, 2, 128, 129, 7, 20, 2, 2, 129, 132, 7, 24, 2, 2, 130, 131,
+	7, 17, 2, 2, 131, 133, 7, 24, 2, 2, 132, 130, 3, 2, 2, 2, 132, 133, 3,
+	2, 2, 2, 133, 134, 3, 2, 2, 2, 134, 135, 7, 21, 2, 2, 135, 29, 3, 2, 2,
+	2, 136, 137, 7, 10, 2, 2, 137, 138, 7, 20, 2, 2, 138, 139, 7, 24, 2, 2,
+	139, 140, 7, 21, 2, 2, 140, 31, 3, 2, 2, 2, 141, 142, 7, 11, 2, 2, 142,
+	143, 7, 20, 2, 2, 143, 144, 7, 24, 2, 2, 144, 145, 7, 21, 2, 2, 145, 33,
+	3, 2, 2, 2, 146, 147, 7, 12, 2, 2, 147, 148, 7, 20, 2, 2, 148, 149, 7,
+	24, 2, 2, 149, 150, 7, 21, 2, 2, 150, 35, 3, 2, 2, 2, 151, 152, 7, 13,
+	2, 2, 152, 153, 7, 20, 2, 2, 153, 154, 7, 24, 2, 2, 154, 155, 7, 21, 2,
+	2, 155, 37, 3, 2, 2, 2, 156, 157, 7, 25, 2, 2, 157, 158, 7, 16, 2, 2, 158,
+	159, 7, 14, 2, 2, 159, 160, 7, 20, 2, 2, 160, 161, 5, 10, 6, 2, 161, 162,
+	7, 21, 2, 2, 162, 163, 7, 19, 2, 2, 163, 39, 3, 2, 2, 2, 7, 43, 48, 56,
+	101, 132,
 }
 var deserializer = antlr.NewATNDeserializer(nil)
 var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
 
 var literalNames = []string{
 	"", "'png'", "'jpg'", "'crop'", "'rotate'", "'flipX'", "'flipY'", "'resize'",
-	"'save'", "'='", "'.'", "','", "'\"'", "';'", "'('", "')'", "'[]'", "'open'",
+	"'brightness'", "'contrast'", "'saturation'", "'pixelate'", "'save'", "'='",
+	"'.'", "','", "'\"'", "';'", "'('", "')'", "'[]'", "'open'",
 }
 var symbolicNames = []string{
-	"", "", "", "", "", "", "", "", "", "ASSIGN", "DOT", "COMMA", "APOS", "SEMICOLON",
-	"OPEN_PARAN", "CLOSED_PARAN", "FOLDER", "OPEN", "NUMBER", "IDENT", "WHITESPACE",
+	"", "", "", "", "", "", "", "", "", "", "", "", "", "ASSIGN", "DOT", "COMMA",
+	"APOS", "SEMICOLON", "OPEN_PARAN", "CLOSED_PARAN", "FOLDER", "OPEN", "NUMBER",
+	"ID", "WHITESPACE",
 }
 
 var ruleNames = []string{
 	"start", "declaration", "openFile", "openFolder", "fileName", "imageType",
 	"folderName", "action_", "actionType", "crop", "rotate", "flipX", "flipY",
-	"resize", "export",
+	"resize", "brightness", "contrast", "saturation", "pixelate", "export",
 }
 var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
 
@@ -122,18 +138,22 @@ const (
 	ImgParserT__5         = 6
 	ImgParserT__6         = 7
 	ImgParserT__7         = 8
-	ImgParserASSIGN       = 9
-	ImgParserDOT          = 10
-	ImgParserCOMMA        = 11
-	ImgParserAPOS         = 12
-	ImgParserSEMICOLON    = 13
-	ImgParserOPEN_PARAN   = 14
-	ImgParserCLOSED_PARAN = 15
-	ImgParserFOLDER       = 16
-	ImgParserOPEN         = 17
-	ImgParserNUMBER       = 18
-	ImgParserIDENT        = 19
-	ImgParserWHITESPACE   = 20
+	ImgParserT__8         = 9
+	ImgParserT__9         = 10
+	ImgParserT__10        = 11
+	ImgParserT__11        = 12
+	ImgParserASSIGN       = 13
+	ImgParserDOT          = 14
+	ImgParserCOMMA        = 15
+	ImgParserAPOS         = 16
+	ImgParserSEMICOLON    = 17
+	ImgParserOPEN_PARAN   = 18
+	ImgParserCLOSED_PARAN = 19
+	ImgParserFOLDER       = 20
+	ImgParserOPEN         = 21
+	ImgParserNUMBER       = 22
+	ImgParserID           = 23
+	ImgParserWHITESPACE   = 24
 )
 
 // ImgParser rules.
@@ -152,7 +172,11 @@ const (
 	ImgParserRULE_flipX       = 11
 	ImgParserRULE_flipY       = 12
 	ImgParserRULE_resize      = 13
-	ImgParserRULE_export      = 14
+	ImgParserRULE_brightness  = 14
+	ImgParserRULE_contrast    = 15
+	ImgParserRULE_saturation  = 16
+	ImgParserRULE_pixelate    = 17
+	ImgParserRULE_export      = 18
 )
 
 // IStartContext is an interface to support dynamic dispatch.
@@ -273,16 +297,6 @@ func (s *StartContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *StartContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ImgVisitor:
-		return t.VisitStart(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ImgParser) Start() (localctx IStartContext) {
 	localctx = NewStartContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, ImgParserRULE_start)
@@ -306,14 +320,14 @@ func (p *ImgParser) Start() (localctx IStartContext) {
 	var _alt int
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(31)
+	p.SetState(39)
 	p.GetErrorHandler().Sync(p)
 	_alt = 1
 	for ok := true; ok; ok = _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
 		switch _alt {
 		case 1:
 			{
-				p.SetState(30)
+				p.SetState(38)
 				p.Declaration()
 			}
 
@@ -321,32 +335,32 @@ func (p *ImgParser) Start() (localctx IStartContext) {
 			panic(antlr.NewNoViableAltException(p, nil, nil, nil, nil, nil))
 		}
 
-		p.SetState(33)
+		p.SetState(41)
 		p.GetErrorHandler().Sync(p)
 		_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 0, p.GetParserRuleContext())
 	}
-	p.SetState(38)
+	p.SetState(46)
 	p.GetErrorHandler().Sync(p)
 	_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 1, p.GetParserRuleContext())
 
 	for _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
 		if _alt == 1 {
 			{
-				p.SetState(35)
+				p.SetState(43)
 				p.Action_()
 			}
 
 		}
-		p.SetState(40)
+		p.SetState(48)
 		p.GetErrorHandler().Sync(p)
 		_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 1, p.GetParserRuleContext())
 	}
 	{
-		p.SetState(41)
+		p.SetState(49)
 		p.Export()
 	}
 	{
-		p.SetState(42)
+		p.SetState(50)
 		p.Match(ImgParserEOF)
 	}
 
@@ -431,16 +445,6 @@ func (s *DeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *DeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ImgVisitor:
-		return t.VisitDeclaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ImgParser) Declaration() (localctx IDeclarationContext) {
 	localctx = NewDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, ImgParserRULE_declaration)
@@ -461,20 +465,20 @@ func (p *ImgParser) Declaration() (localctx IDeclarationContext) {
 		}
 	}()
 
-	p.SetState(46)
+	p.SetState(54)
 	p.GetErrorHandler().Sync(p)
 	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 2, p.GetParserRuleContext()) {
 	case 1:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(44)
+			p.SetState(52)
 			p.OpenFile()
 		}
 
 	case 2:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(45)
+			p.SetState(53)
 			p.OpenFolder()
 		}
 
@@ -521,8 +525,8 @@ func NewOpenFileContext(parser antlr.Parser, parent antlr.ParserRuleContext, inv
 
 func (s *OpenFileContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *OpenFileContext) IDENT() antlr.TerminalNode {
-	return s.GetToken(ImgParserIDENT, 0)
+func (s *OpenFileContext) ID() antlr.TerminalNode {
+	return s.GetToken(ImgParserID, 0)
 }
 
 func (s *OpenFileContext) ASSIGN() antlr.TerminalNode {
@@ -575,16 +579,6 @@ func (s *OpenFileContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *OpenFileContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ImgVisitor:
-		return t.VisitOpenFile(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ImgParser) OpenFile() (localctx IOpenFileContext) {
 	localctx = NewOpenFileContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, ImgParserRULE_openFile)
@@ -607,31 +601,31 @@ func (p *ImgParser) OpenFile() (localctx IOpenFileContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(48)
-		p.Match(ImgParserIDENT)
+		p.SetState(56)
+		p.Match(ImgParserID)
 	}
 	{
-		p.SetState(49)
+		p.SetState(57)
 		p.Match(ImgParserASSIGN)
 	}
 	{
-		p.SetState(50)
+		p.SetState(58)
 		p.Match(ImgParserOPEN)
 	}
 	{
-		p.SetState(51)
+		p.SetState(59)
 		p.Match(ImgParserOPEN_PARAN)
 	}
 	{
-		p.SetState(52)
+		p.SetState(60)
 		p.FileName()
 	}
 	{
-		p.SetState(53)
+		p.SetState(61)
 		p.Match(ImgParserCLOSED_PARAN)
 	}
 	{
-		p.SetState(54)
+		p.SetState(62)
 		p.Match(ImgParserSEMICOLON)
 	}
 
@@ -676,8 +670,8 @@ func NewOpenFolderContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 
 func (s *OpenFolderContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *OpenFolderContext) IDENT() antlr.TerminalNode {
-	return s.GetToken(ImgParserIDENT, 0)
+func (s *OpenFolderContext) ID() antlr.TerminalNode {
+	return s.GetToken(ImgParserID, 0)
 }
 
 func (s *OpenFolderContext) FOLDER() antlr.TerminalNode {
@@ -734,16 +728,6 @@ func (s *OpenFolderContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *OpenFolderContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ImgVisitor:
-		return t.VisitOpenFolder(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ImgParser) OpenFolder() (localctx IOpenFolderContext) {
 	localctx = NewOpenFolderContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, ImgParserRULE_openFolder)
@@ -766,35 +750,35 @@ func (p *ImgParser) OpenFolder() (localctx IOpenFolderContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(56)
-		p.Match(ImgParserIDENT)
+		p.SetState(64)
+		p.Match(ImgParserID)
 	}
 	{
-		p.SetState(57)
+		p.SetState(65)
 		p.Match(ImgParserFOLDER)
 	}
 	{
-		p.SetState(58)
+		p.SetState(66)
 		p.Match(ImgParserASSIGN)
 	}
 	{
-		p.SetState(59)
+		p.SetState(67)
 		p.Match(ImgParserOPEN)
 	}
 	{
-		p.SetState(60)
+		p.SetState(68)
 		p.Match(ImgParserOPEN_PARAN)
 	}
 	{
-		p.SetState(61)
+		p.SetState(69)
 		p.FolderName()
 	}
 	{
-		p.SetState(62)
+		p.SetState(70)
 		p.Match(ImgParserCLOSED_PARAN)
 	}
 	{
-		p.SetState(63)
+		p.SetState(71)
 		p.Match(ImgParserSEMICOLON)
 	}
 
@@ -847,8 +831,8 @@ func (s *FileNameContext) APOS(i int) antlr.TerminalNode {
 	return s.GetToken(ImgParserAPOS, i)
 }
 
-func (s *FileNameContext) IDENT() antlr.TerminalNode {
-	return s.GetToken(ImgParserIDENT, 0)
+func (s *FileNameContext) ID() antlr.TerminalNode {
+	return s.GetToken(ImgParserID, 0)
 }
 
 func (s *FileNameContext) DOT() antlr.TerminalNode {
@@ -885,16 +869,6 @@ func (s *FileNameContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *FileNameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ImgVisitor:
-		return t.VisitFileName(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ImgParser) FileName() (localctx IFileNameContext) {
 	localctx = NewFileNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, ImgParserRULE_fileName)
@@ -917,23 +891,23 @@ func (p *ImgParser) FileName() (localctx IFileNameContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(65)
+		p.SetState(73)
 		p.Match(ImgParserAPOS)
 	}
 	{
-		p.SetState(66)
-		p.Match(ImgParserIDENT)
+		p.SetState(74)
+		p.Match(ImgParserID)
 	}
 	{
-		p.SetState(67)
+		p.SetState(75)
 		p.Match(ImgParserDOT)
 	}
 	{
-		p.SetState(68)
+		p.SetState(76)
 		p.ImageType()
 	}
 	{
-		p.SetState(69)
+		p.SetState(77)
 		p.Match(ImgParserAPOS)
 	}
 
@@ -997,16 +971,6 @@ func (s *ImageTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ImageTypeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ImgVisitor:
-		return t.VisitImageType(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ImgParser) ImageType() (localctx IImageTypeContext) {
 	localctx = NewImageTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, ImgParserRULE_imageType)
@@ -1029,7 +993,7 @@ func (p *ImgParser) ImageType() (localctx IImageTypeContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(71)
+	p.SetState(79)
 	_la = p.GetTokenStream().LA(1)
 
 	if !(_la == ImgParserT__0 || _la == ImgParserT__1) {
@@ -1088,8 +1052,8 @@ func (s *FolderNameContext) APOS(i int) antlr.TerminalNode {
 	return s.GetToken(ImgParserAPOS, i)
 }
 
-func (s *FolderNameContext) IDENT() antlr.TerminalNode {
-	return s.GetToken(ImgParserIDENT, 0)
+func (s *FolderNameContext) ID() antlr.TerminalNode {
+	return s.GetToken(ImgParserID, 0)
 }
 
 func (s *FolderNameContext) GetRuleContext() antlr.RuleContext {
@@ -1109,16 +1073,6 @@ func (s *FolderNameContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *FolderNameContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ImgListener); ok {
 		listenerT.ExitFolderName(s)
-	}
-}
-
-func (s *FolderNameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ImgVisitor:
-		return t.VisitFolderName(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1144,15 +1098,15 @@ func (p *ImgParser) FolderName() (localctx IFolderNameContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(73)
+		p.SetState(81)
 		p.Match(ImgParserAPOS)
 	}
 	{
-		p.SetState(74)
-		p.Match(ImgParserIDENT)
+		p.SetState(82)
+		p.Match(ImgParserID)
 	}
 	{
-		p.SetState(75)
+		p.SetState(83)
 		p.Match(ImgParserAPOS)
 	}
 
@@ -1197,8 +1151,8 @@ func NewAction_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 
 func (s *Action_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *Action_Context) IDENT() antlr.TerminalNode {
-	return s.GetToken(ImgParserIDENT, 0)
+func (s *Action_Context) ID() antlr.TerminalNode {
+	return s.GetToken(ImgParserID, 0)
 }
 
 func (s *Action_Context) DOT() antlr.TerminalNode {
@@ -1239,16 +1193,6 @@ func (s *Action_Context) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Action_Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ImgVisitor:
-		return t.VisitAction_(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ImgParser) Action_() (localctx IAction_Context) {
 	localctx = NewAction_Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, ImgParserRULE_action_)
@@ -1271,19 +1215,19 @@ func (p *ImgParser) Action_() (localctx IAction_Context) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(77)
-		p.Match(ImgParserIDENT)
+		p.SetState(85)
+		p.Match(ImgParserID)
 	}
 	{
-		p.SetState(78)
+		p.SetState(86)
 		p.Match(ImgParserDOT)
 	}
 	{
-		p.SetState(79)
+		p.SetState(87)
 		p.ActionType()
 	}
 	{
-		p.SetState(80)
+		p.SetState(88)
 		p.Match(ImgParserSEMICOLON)
 	}
 
@@ -1378,6 +1322,46 @@ func (s *ActionTypeContext) Resize() IResizeContext {
 	return t.(IResizeContext)
 }
 
+func (s *ActionTypeContext) Brightness() IBrightnessContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IBrightnessContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IBrightnessContext)
+}
+
+func (s *ActionTypeContext) Contrast() IContrastContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IContrastContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IContrastContext)
+}
+
+func (s *ActionTypeContext) Saturation() ISaturationContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*ISaturationContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(ISaturationContext)
+}
+
+func (s *ActionTypeContext) Pixelate() IPixelateContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IPixelateContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IPixelateContext)
+}
+
 func (s *ActionTypeContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -1395,16 +1379,6 @@ func (s *ActionTypeContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ActionTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ImgListener); ok {
 		listenerT.ExitActionType(s)
-	}
-}
-
-func (s *ActionTypeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ImgVisitor:
-		return t.VisitActionType(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1428,43 +1402,71 @@ func (p *ImgParser) ActionType() (localctx IActionTypeContext) {
 		}
 	}()
 
-	p.SetState(87)
+	p.SetState(99)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
 	case ImgParserT__2:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(82)
+			p.SetState(90)
 			p.Crop()
 		}
 
 	case ImgParserT__3:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(83)
+			p.SetState(91)
 			p.Rotate()
 		}
 
 	case ImgParserT__4:
 		p.EnterOuterAlt(localctx, 3)
 		{
-			p.SetState(84)
+			p.SetState(92)
 			p.FlipX()
 		}
 
 	case ImgParserT__5:
 		p.EnterOuterAlt(localctx, 4)
 		{
-			p.SetState(85)
+			p.SetState(93)
 			p.FlipY()
 		}
 
 	case ImgParserT__6:
 		p.EnterOuterAlt(localctx, 5)
 		{
-			p.SetState(86)
+			p.SetState(94)
 			p.Resize()
+		}
+
+	case ImgParserT__7:
+		p.EnterOuterAlt(localctx, 6)
+		{
+			p.SetState(95)
+			p.Brightness()
+		}
+
+	case ImgParserT__8:
+		p.EnterOuterAlt(localctx, 7)
+		{
+			p.SetState(96)
+			p.Contrast()
+		}
+
+	case ImgParserT__9:
+		p.EnterOuterAlt(localctx, 8)
+		{
+			p.SetState(97)
+			p.Saturation()
+		}
+
+	case ImgParserT__10:
+		p.EnterOuterAlt(localctx, 9)
+		{
+			p.SetState(98)
+			p.Pixelate()
 		}
 
 	default:
@@ -1556,16 +1558,6 @@ func (s *CropContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *CropContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ImgVisitor:
-		return t.VisitCrop(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ImgParser) Crop() (localctx ICropContext) {
 	localctx = NewCropContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, ImgParserRULE_crop)
@@ -1588,43 +1580,43 @@ func (p *ImgParser) Crop() (localctx ICropContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(89)
+		p.SetState(101)
 		p.Match(ImgParserT__2)
 	}
 	{
-		p.SetState(90)
+		p.SetState(102)
 		p.Match(ImgParserOPEN_PARAN)
 	}
 	{
-		p.SetState(91)
+		p.SetState(103)
 		p.Match(ImgParserNUMBER)
 	}
 	{
-		p.SetState(92)
+		p.SetState(104)
 		p.Match(ImgParserCOMMA)
 	}
 	{
-		p.SetState(93)
+		p.SetState(105)
 		p.Match(ImgParserNUMBER)
 	}
 	{
-		p.SetState(94)
+		p.SetState(106)
 		p.Match(ImgParserCOMMA)
 	}
 	{
-		p.SetState(95)
+		p.SetState(107)
 		p.Match(ImgParserNUMBER)
 	}
 	{
-		p.SetState(96)
+		p.SetState(108)
 		p.Match(ImgParserCOMMA)
 	}
 	{
-		p.SetState(97)
+		p.SetState(109)
 		p.Match(ImgParserNUMBER)
 	}
 	{
-		p.SetState(98)
+		p.SetState(110)
 		p.Match(ImgParserCLOSED_PARAN)
 	}
 
@@ -1701,16 +1693,6 @@ func (s *RotateContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *RotateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ImgVisitor:
-		return t.VisitRotate(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ImgParser) Rotate() (localctx IRotateContext) {
 	localctx = NewRotateContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, ImgParserRULE_rotate)
@@ -1733,19 +1715,19 @@ func (p *ImgParser) Rotate() (localctx IRotateContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(100)
+		p.SetState(112)
 		p.Match(ImgParserT__3)
 	}
 	{
-		p.SetState(101)
+		p.SetState(113)
 		p.Match(ImgParserOPEN_PARAN)
 	}
 	{
-		p.SetState(102)
+		p.SetState(114)
 		p.Match(ImgParserNUMBER)
 	}
 	{
-		p.SetState(103)
+		p.SetState(115)
 		p.Match(ImgParserCLOSED_PARAN)
 	}
 
@@ -1818,16 +1800,6 @@ func (s *FlipXContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *FlipXContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ImgVisitor:
-		return t.VisitFlipX(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ImgParser) FlipX() (localctx IFlipXContext) {
 	localctx = NewFlipXContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, ImgParserRULE_flipX)
@@ -1850,15 +1822,15 @@ func (p *ImgParser) FlipX() (localctx IFlipXContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(105)
+		p.SetState(117)
 		p.Match(ImgParserT__4)
 	}
 	{
-		p.SetState(106)
+		p.SetState(118)
 		p.Match(ImgParserOPEN_PARAN)
 	}
 	{
-		p.SetState(107)
+		p.SetState(119)
 		p.Match(ImgParserCLOSED_PARAN)
 	}
 
@@ -1931,16 +1903,6 @@ func (s *FlipYContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *FlipYContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ImgVisitor:
-		return t.VisitFlipY(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ImgParser) FlipY() (localctx IFlipYContext) {
 	localctx = NewFlipYContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, ImgParserRULE_flipY)
@@ -1963,15 +1925,15 @@ func (p *ImgParser) FlipY() (localctx IFlipYContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(109)
+		p.SetState(121)
 		p.Match(ImgParserT__5)
 	}
 	{
-		p.SetState(110)
+		p.SetState(122)
 		p.Match(ImgParserOPEN_PARAN)
 	}
 	{
-		p.SetState(111)
+		p.SetState(123)
 		p.Match(ImgParserCLOSED_PARAN)
 	}
 
@@ -2056,16 +2018,6 @@ func (s *ResizeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ResizeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ImgVisitor:
-		return t.VisitResize(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ImgParser) Resize() (localctx IResizeContext) {
 	localctx = NewResizeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, ImgParserRULE_resize)
@@ -2089,34 +2041,478 @@ func (p *ImgParser) Resize() (localctx IResizeContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(113)
+		p.SetState(125)
 		p.Match(ImgParserT__6)
 	}
 	{
-		p.SetState(114)
+		p.SetState(126)
 		p.Match(ImgParserOPEN_PARAN)
 	}
 	{
-		p.SetState(115)
+		p.SetState(127)
 		p.Match(ImgParserNUMBER)
 	}
-	p.SetState(118)
+	p.SetState(130)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == ImgParserCOMMA {
 		{
-			p.SetState(116)
+			p.SetState(128)
 			p.Match(ImgParserCOMMA)
 		}
 		{
-			p.SetState(117)
+			p.SetState(129)
 			p.Match(ImgParserNUMBER)
 		}
 
 	}
 	{
-		p.SetState(120)
+		p.SetState(132)
+		p.Match(ImgParserCLOSED_PARAN)
+	}
+
+	return localctx
+}
+
+// IBrightnessContext is an interface to support dynamic dispatch.
+type IBrightnessContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsBrightnessContext differentiates from other interfaces.
+	IsBrightnessContext()
+}
+
+type BrightnessContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyBrightnessContext() *BrightnessContext {
+	var p = new(BrightnessContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = ImgParserRULE_brightness
+	return p
+}
+
+func (*BrightnessContext) IsBrightnessContext() {}
+
+func NewBrightnessContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *BrightnessContext {
+	var p = new(BrightnessContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = ImgParserRULE_brightness
+
+	return p
+}
+
+func (s *BrightnessContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *BrightnessContext) OPEN_PARAN() antlr.TerminalNode {
+	return s.GetToken(ImgParserOPEN_PARAN, 0)
+}
+
+func (s *BrightnessContext) NUMBER() antlr.TerminalNode {
+	return s.GetToken(ImgParserNUMBER, 0)
+}
+
+func (s *BrightnessContext) CLOSED_PARAN() antlr.TerminalNode {
+	return s.GetToken(ImgParserCLOSED_PARAN, 0)
+}
+
+func (s *BrightnessContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *BrightnessContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *BrightnessContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(ImgListener); ok {
+		listenerT.EnterBrightness(s)
+	}
+}
+
+func (s *BrightnessContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(ImgListener); ok {
+		listenerT.ExitBrightness(s)
+	}
+}
+
+func (p *ImgParser) Brightness() (localctx IBrightnessContext) {
+	localctx = NewBrightnessContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 28, ImgParserRULE_brightness)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(134)
+		p.Match(ImgParserT__7)
+	}
+	{
+		p.SetState(135)
+		p.Match(ImgParserOPEN_PARAN)
+	}
+	{
+		p.SetState(136)
+		p.Match(ImgParserNUMBER)
+	}
+	{
+		p.SetState(137)
+		p.Match(ImgParserCLOSED_PARAN)
+	}
+
+	return localctx
+}
+
+// IContrastContext is an interface to support dynamic dispatch.
+type IContrastContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsContrastContext differentiates from other interfaces.
+	IsContrastContext()
+}
+
+type ContrastContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyContrastContext() *ContrastContext {
+	var p = new(ContrastContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = ImgParserRULE_contrast
+	return p
+}
+
+func (*ContrastContext) IsContrastContext() {}
+
+func NewContrastContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ContrastContext {
+	var p = new(ContrastContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = ImgParserRULE_contrast
+
+	return p
+}
+
+func (s *ContrastContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *ContrastContext) OPEN_PARAN() antlr.TerminalNode {
+	return s.GetToken(ImgParserOPEN_PARAN, 0)
+}
+
+func (s *ContrastContext) NUMBER() antlr.TerminalNode {
+	return s.GetToken(ImgParserNUMBER, 0)
+}
+
+func (s *ContrastContext) CLOSED_PARAN() antlr.TerminalNode {
+	return s.GetToken(ImgParserCLOSED_PARAN, 0)
+}
+
+func (s *ContrastContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *ContrastContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *ContrastContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(ImgListener); ok {
+		listenerT.EnterContrast(s)
+	}
+}
+
+func (s *ContrastContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(ImgListener); ok {
+		listenerT.ExitContrast(s)
+	}
+}
+
+func (p *ImgParser) Contrast() (localctx IContrastContext) {
+	localctx = NewContrastContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 30, ImgParserRULE_contrast)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(139)
+		p.Match(ImgParserT__8)
+	}
+	{
+		p.SetState(140)
+		p.Match(ImgParserOPEN_PARAN)
+	}
+	{
+		p.SetState(141)
+		p.Match(ImgParserNUMBER)
+	}
+	{
+		p.SetState(142)
+		p.Match(ImgParserCLOSED_PARAN)
+	}
+
+	return localctx
+}
+
+// ISaturationContext is an interface to support dynamic dispatch.
+type ISaturationContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsSaturationContext differentiates from other interfaces.
+	IsSaturationContext()
+}
+
+type SaturationContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptySaturationContext() *SaturationContext {
+	var p = new(SaturationContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = ImgParserRULE_saturation
+	return p
+}
+
+func (*SaturationContext) IsSaturationContext() {}
+
+func NewSaturationContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *SaturationContext {
+	var p = new(SaturationContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = ImgParserRULE_saturation
+
+	return p
+}
+
+func (s *SaturationContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *SaturationContext) OPEN_PARAN() antlr.TerminalNode {
+	return s.GetToken(ImgParserOPEN_PARAN, 0)
+}
+
+func (s *SaturationContext) NUMBER() antlr.TerminalNode {
+	return s.GetToken(ImgParserNUMBER, 0)
+}
+
+func (s *SaturationContext) CLOSED_PARAN() antlr.TerminalNode {
+	return s.GetToken(ImgParserCLOSED_PARAN, 0)
+}
+
+func (s *SaturationContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *SaturationContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *SaturationContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(ImgListener); ok {
+		listenerT.EnterSaturation(s)
+	}
+}
+
+func (s *SaturationContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(ImgListener); ok {
+		listenerT.ExitSaturation(s)
+	}
+}
+
+func (p *ImgParser) Saturation() (localctx ISaturationContext) {
+	localctx = NewSaturationContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 32, ImgParserRULE_saturation)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(144)
+		p.Match(ImgParserT__9)
+	}
+	{
+		p.SetState(145)
+		p.Match(ImgParserOPEN_PARAN)
+	}
+	{
+		p.SetState(146)
+		p.Match(ImgParserNUMBER)
+	}
+	{
+		p.SetState(147)
+		p.Match(ImgParserCLOSED_PARAN)
+	}
+
+	return localctx
+}
+
+// IPixelateContext is an interface to support dynamic dispatch.
+type IPixelateContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsPixelateContext differentiates from other interfaces.
+	IsPixelateContext()
+}
+
+type PixelateContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyPixelateContext() *PixelateContext {
+	var p = new(PixelateContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = ImgParserRULE_pixelate
+	return p
+}
+
+func (*PixelateContext) IsPixelateContext() {}
+
+func NewPixelateContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *PixelateContext {
+	var p = new(PixelateContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = ImgParserRULE_pixelate
+
+	return p
+}
+
+func (s *PixelateContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *PixelateContext) OPEN_PARAN() antlr.TerminalNode {
+	return s.GetToken(ImgParserOPEN_PARAN, 0)
+}
+
+func (s *PixelateContext) NUMBER() antlr.TerminalNode {
+	return s.GetToken(ImgParserNUMBER, 0)
+}
+
+func (s *PixelateContext) CLOSED_PARAN() antlr.TerminalNode {
+	return s.GetToken(ImgParserCLOSED_PARAN, 0)
+}
+
+func (s *PixelateContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *PixelateContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *PixelateContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(ImgListener); ok {
+		listenerT.EnterPixelate(s)
+	}
+}
+
+func (s *PixelateContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(ImgListener); ok {
+		listenerT.ExitPixelate(s)
+	}
+}
+
+func (p *ImgParser) Pixelate() (localctx IPixelateContext) {
+	localctx = NewPixelateContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 34, ImgParserRULE_pixelate)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(149)
+		p.Match(ImgParserT__10)
+	}
+	{
+		p.SetState(150)
+		p.Match(ImgParserOPEN_PARAN)
+	}
+	{
+		p.SetState(151)
+		p.Match(ImgParserNUMBER)
+	}
+	{
+		p.SetState(152)
 		p.Match(ImgParserCLOSED_PARAN)
 	}
 
@@ -2161,8 +2557,8 @@ func NewExportContext(parser antlr.Parser, parent antlr.ParserRuleContext, invok
 
 func (s *ExportContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *ExportContext) IDENT() antlr.TerminalNode {
-	return s.GetToken(ImgParserIDENT, 0)
+func (s *ExportContext) ID() antlr.TerminalNode {
+	return s.GetToken(ImgParserID, 0)
 }
 
 func (s *ExportContext) DOT() antlr.TerminalNode {
@@ -2211,19 +2607,9 @@ func (s *ExportContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ExportContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ImgVisitor:
-		return t.VisitExport(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ImgParser) Export() (localctx IExportContext) {
 	localctx = NewExportContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 28, ImgParserRULE_export)
+	p.EnterRule(localctx, 36, ImgParserRULE_export)
 
 	defer func() {
 		p.ExitRule()
@@ -2243,31 +2629,31 @@ func (p *ImgParser) Export() (localctx IExportContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(122)
-		p.Match(ImgParserIDENT)
+		p.SetState(154)
+		p.Match(ImgParserID)
 	}
 	{
-		p.SetState(123)
+		p.SetState(155)
 		p.Match(ImgParserDOT)
 	}
 	{
-		p.SetState(124)
-		p.Match(ImgParserT__7)
+		p.SetState(156)
+		p.Match(ImgParserT__11)
 	}
 	{
-		p.SetState(125)
+		p.SetState(157)
 		p.Match(ImgParserOPEN_PARAN)
 	}
 	{
-		p.SetState(126)
+		p.SetState(158)
 		p.FileName()
 	}
 	{
-		p.SetState(127)
+		p.SetState(159)
 		p.Match(ImgParserCLOSED_PARAN)
 	}
 	{
-		p.SetState(128)
+		p.SetState(160)
 		p.Match(ImgParserSEMICOLON)
 	}
 

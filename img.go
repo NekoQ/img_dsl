@@ -125,5 +125,31 @@ func (l *ImgListener) ExitCrop(c *parser.CropContext) {
 	y1, _ := strconv.Atoi(params[3].GetText())
 
 	l.g.Add(gift.Crop(image.Rect(x0, y0, x1, y1)))
+}
 
+func (l *ImgListener) ExitResize(c *parser.ResizeContext) {
+	params := c.AllNUMBER()
+	width, _ := strconv.Atoi(params[0].GetText())
+	height, _ := strconv.Atoi(params[1].GetText())
+	l.g.Add(gift.Resize(width, height, gift.LanczosResampling))
+}
+
+func (l *ImgListener) ExitBrightness(c *parser.BrightnessContext) {
+	number, _ := strconv.ParseFloat(c.NUMBER().GetText(), 32)
+	l.g.Add(gift.Brightness(float32(number)))
+}
+
+func (l *ImgListener) ExitContrast(c *parser.ContrastContext) {
+	number, _ := strconv.ParseFloat(c.NUMBER().GetText(), 32)
+	l.g.Add(gift.Contrast(float32(number)))
+}
+
+func (l *ImgListener) ExitSaturation(c *parser.SaturationContext) {
+	number, _ := strconv.ParseFloat(c.NUMBER().GetText(), 32)
+	l.g.Add(gift.Saturation(float32(number)))
+}
+
+func (l *ImgListener) ExitPixelate(c *parser.PixelateContext) {
+	number, _ := strconv.Atoi(c.NUMBER().GetText())
+	l.g.Add(gift.Pixelate(number))
 }

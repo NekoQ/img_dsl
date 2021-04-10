@@ -105,6 +105,30 @@ func (s *BaseImgListener) EnterResize(ctx *ResizeContext) {}
 // ExitResize is called when production resize is exited.
 func (s *BaseImgListener) ExitResize(ctx *ResizeContext) {}
 
+// EnterBrightness is called when production brightness is entered.
+func (s *BaseImgListener) EnterBrightness(ctx *BrightnessContext) {}
+
+// ExitBrightness is called when production brightness is exited.
+func (s *BaseImgListener) ExitBrightness(ctx *BrightnessContext) {}
+
+// EnterContrast is called when production contrast is entered.
+func (s *BaseImgListener) EnterContrast(ctx *ContrastContext) {}
+
+// ExitContrast is called when production contrast is exited.
+func (s *BaseImgListener) ExitContrast(ctx *ContrastContext) {}
+
+// EnterSaturation is called when production saturation is entered.
+func (s *BaseImgListener) EnterSaturation(ctx *SaturationContext) {}
+
+// ExitSaturation is called when production saturation is exited.
+func (s *BaseImgListener) ExitSaturation(ctx *SaturationContext) {}
+
+// EnterPixelate is called when production pixelate is entered.
+func (s *BaseImgListener) EnterPixelate(ctx *PixelateContext) {}
+
+// ExitPixelate is called when production pixelate is exited.
+func (s *BaseImgListener) ExitPixelate(ctx *PixelateContext) {}
+
 // EnterExport is called when production export is entered.
 func (s *BaseImgListener) EnterExport(ctx *ExportContext) {}
 
