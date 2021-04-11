@@ -1,18 +1,26 @@
 ### Build and Run
 ``` bash
 go build
-./img.exe input.txt
+./img.exe input.img
 ``` 
 
-### Program Example
+### Program Structure
 
 ``` bash
-img = open("image.png");   
-img.rotate(180);
-img.save("new_image.png");
+--- Declarations ---
+img1 = open("image1.png");
+img2 = open("image2.png");
+
+--- Actions ---
+img1.rotate(180);
+img2.pixelate(15);
+
+--- Exports ---
+img1.save("new_image_1.png");
+img2.save("new_image_2.png");
 ```
 
-**Open** and **save** actions are mandatory
+**Note:** Comments are not defined by grammar, yet.
 
 ### Actions available:
 ``` bash

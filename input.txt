@@ -1,5 +1,0 @@
-img = open("image.png");
-img.rotate(180);
-img.pixelate(50);
-img.save("new_image.png");
-

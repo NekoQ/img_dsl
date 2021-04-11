@@ -16,10 +16,18 @@ import (
 	"github.com/disintegration/gift"
 )
 
+type Image struct {
+	g *gift.GIFT
+
+	src image.Image
+}
+
 type ImgListener struct {
 	*parser.BaseImgListener
 
-	g *gift.GIFT
+	images       map[string]Image
+	currentImage string
+	g            *gift.GIFT
 
 	src string
 	dst string
@@ -34,6 +42,7 @@ func main() {
 	}
 
 	var l ImgListener
+	l.images = make(map[string]Image)
 	l.g = gift.New()
 
 	// Setup the input
@@ -48,21 +57,84 @@ func main() {
 
 	// Finally parse the expression
 	antlr.ParseTreeWalkerDefault.Walk(&l, p.Start())
-	executeActions(l)
 }
 
-func executeActions(l ImgListener) {
-	fmt.Println("Start executing actions")
+// Open and Export file ---------------
 
-	src := loadImage(l.src)
-	fmt.Println("Opening file: " + l.src + " ✓")
+func (l *ImgListener) ExitOpenFile(c *parser.OpenFileContext) {
+	src := loadImage(strings.Trim(c.FileName().GetText(), "\""))
+	fmt.Println("Opening file: " + strings.Trim(c.FileName().GetText(), "\"") + " ✓")
 
-	dst := image.NewRGBA(l.g.Bounds(src.Bounds()))
-	l.g.Draw(dst, src)
-	fmt.Println("Applying filters ✓")
+	image := Image{g: gift.New(), src: src}
+	l.images[c.ID().GetText()] = image
+}
 
-	saveImage(l.dst, dst)
-	fmt.Println("Creating new file: " + l.dst + " ✓")
+func (l *ImgListener) ExitExport(c *parser.ExportContext) {
+	img := l.images[c.ID().GetText()]
+	dst := image.NewRGBA(img.g.Bounds(img.src.Bounds()))
+	img.g.Draw(dst, img.src)
+	fmt.Println("Applying filters on: " + c.ID().GetText() + " ✓")
+
+	saveImage(strings.Trim(c.FileName().GetText(), "\""), dst)
+	fmt.Println("Creating new file: " + strings.Trim(c.FileName().GetText(), "\"") + " ✓")
+}
+
+// Actions ---------------------
+
+func (l *ImgListener) EnterAction_(c *parser.Action_Context) {
+	l.currentImage = c.ID().GetText()
+}
+
+func (l *ImgListener) ExitRotate(c *parser.RotateContext) {
+	params := c.NUMBER().GetText()
+	angle, _ := strconv.ParseFloat(params, 32)
+	// Check for error
+	l.images[l.currentImage].g.Add(gift.Rotate(float32(angle), color.Transparent, gift.CubicInterpolation))
+}
+
+func (l *ImgListener) ExitFlipY(c *parser.FlipYContext) {
+	l.images[l.currentImage].g.Add(gift.FlipVertical())
+}
+
+func (l *ImgListener) ExitFlipX(c *parser.FlipXContext) {
+	l.images[l.currentImage].g.Add(gift.FlipHorizontal())
+}
+
+func (l *ImgListener) ExitCrop(c *parser.CropContext) {
+	params := c.AllNUMBER()
+	x0, _ := strconv.Atoi(params[0].GetText())
+	y0, _ := strconv.Atoi(params[1].GetText())
+	x1, _ := strconv.Atoi(params[2].GetText())
+	y1, _ := strconv.Atoi(params[3].GetText())
+
+	l.images[l.currentImage].g.Add(gift.Crop(image.Rect(x0, y0, x1, y1)))
+}
+
+func (l *ImgListener) ExitResize(c *parser.ResizeContext) {
+	params := c.AllNUMBER()
+	width, _ := strconv.Atoi(params[0].GetText())
+	height, _ := strconv.Atoi(params[1].GetText())
+	l.images[l.currentImage].g.Add(gift.Resize(width, height, gift.LanczosResampling))
+}
+
+func (l *ImgListener) ExitBrightness(c *parser.BrightnessContext) {
+	number, _ := strconv.ParseFloat(c.NUMBER().GetText(), 32)
+	l.images[l.currentImage].g.Add(gift.Brightness(float32(number)))
+}
+
+func (l *ImgListener) ExitContrast(c *parser.ContrastContext) {
+	number, _ := strconv.ParseFloat(c.NUMBER().GetText(), 32)
+	l.images[l.currentImage].g.Add(gift.Contrast(float32(number)))
+}
+
+func (l *ImgListener) ExitSaturation(c *parser.SaturationContext) {
+	number, _ := strconv.ParseFloat(c.NUMBER().GetText(), 32)
+	l.images[l.currentImage].g.Add(gift.Saturation(float32(number)))
+}
+
+func (l *ImgListener) ExitPixelate(c *parser.PixelateContext) {
+	number, _ := strconv.Atoi(c.NUMBER().GetText())
+	l.images[l.currentImage].g.Add(gift.Pixelate(number))
 }
 
 func loadImage(filename string) image.Image {
@@ -88,68 +160,4 @@ func saveImage(filename string, img image.Image) {
 	if err != nil {
 		log.Fatalf("png.Encode failed: %v", err)
 	}
-}
-
-// Open and Export file ---------------
-
-func (l *ImgListener) ExitOpenFile(c *parser.OpenFileContext) {
-	l.src = strings.Trim(c.FileName().GetText(), "\"")
-}
-
-func (l *ImgListener) ExitExport(c *parser.ExportContext) {
-	l.dst = strings.Trim(c.FileName().GetText(), "\"")
-}
-
-// Actions ---------------------
-
-func (l *ImgListener) ExitRotate(c *parser.RotateContext) {
-	params := c.NUMBER().GetText()
-	angle, _ := strconv.ParseFloat(params, 32)
-	// Check for error
-	l.g.Add(gift.Rotate(float32(angle), color.Transparent, gift.CubicInterpolation))
-}
-
-func (l *ImgListener) ExitFlipY(c *parser.FlipYContext) {
-	l.g.Add(gift.FlipVertical())
-}
-
-func (l *ImgListener) ExitFlipX(c *parser.FlipXContext) {
-	l.g.Add(gift.FlipHorizontal())
-}
-
-func (l *ImgListener) ExitCrop(c *parser.CropContext) {
-	params := c.AllNUMBER()
-	x0, _ := strconv.Atoi(params[0].GetText())
-	y0, _ := strconv.Atoi(params[1].GetText())
-	x1, _ := strconv.Atoi(params[2].GetText())
-	y1, _ := strconv.Atoi(params[3].GetText())
-
-	l.g.Add(gift.Crop(image.Rect(x0, y0, x1, y1)))
-}
-
-func (l *ImgListener) ExitResize(c *parser.ResizeContext) {
-	params := c.AllNUMBER()
-	width, _ := strconv.Atoi(params[0].GetText())
-	height, _ := strconv.Atoi(params[1].GetText())
-	l.g.Add(gift.Resize(width, height, gift.LanczosResampling))
-}
-
-func (l *ImgListener) ExitBrightness(c *parser.BrightnessContext) {
-	number, _ := strconv.ParseFloat(c.NUMBER().GetText(), 32)
-	l.g.Add(gift.Brightness(float32(number)))
-}
-
-func (l *ImgListener) ExitContrast(c *parser.ContrastContext) {
-	number, _ := strconv.ParseFloat(c.NUMBER().GetText(), 32)
-	l.g.Add(gift.Contrast(float32(number)))
-}
-
-func (l *ImgListener) ExitSaturation(c *parser.SaturationContext) {
-	number, _ := strconv.ParseFloat(c.NUMBER().GetText(), 32)
-	l.g.Add(gift.Saturation(float32(number)))
-}
-
-func (l *ImgListener) ExitPixelate(c *parser.PixelateContext) {
-	number, _ := strconv.Atoi(c.NUMBER().GetText())
-	l.g.Add(gift.Pixelate(number))
 }

@@ -11,11 +11,11 @@ CLOSED_PARAN: ')';
 FOLDER: '[]';
 OPEN: 'open';
 NUMBER: [0-9]+;
-ID: [a-zA-Z_]+;
+ID: [a-zA-Z_]+ NUMBER;
 WHITESPACE: [ \r\n\t]+ -> skip;
 
 // Rules
-start: declaration+ action_* export EOF;
+start: declaration+ action_* export+ EOF;
 
 // Declaration
 declaration: openFile | openFolder;
