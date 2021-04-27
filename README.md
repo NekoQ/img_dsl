@@ -1,5 +1,6 @@
 ### Build and Run
 ``` bash
+go mod vendor
 go build
 ./img.exe input.img
 ``` 
