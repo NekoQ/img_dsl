@@ -16,92 +16,109 @@ var _ = reflect.Copy
 var _ = strconv.Itoa
 
 var parserATN = []uint16{
-	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 26, 169,
+	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 28, 203,
 	4, 2, 9, 2, 4, 3, 9, 3, 4, 4, 9, 4, 4, 5, 9, 5, 4, 6, 9, 6, 4, 7, 9, 7,
 	4, 8, 9, 8, 4, 9, 9, 9, 4, 10, 9, 10, 4, 11, 9, 11, 4, 12, 9, 12, 4, 13,
 	9, 13, 4, 14, 9, 14, 4, 15, 9, 15, 4, 16, 9, 16, 4, 17, 9, 17, 4, 18, 9,
-	18, 4, 19, 9, 19, 4, 20, 9, 20, 3, 2, 6, 2, 42, 10, 2, 13, 2, 14, 2, 43,
-	3, 2, 7, 2, 47, 10, 2, 12, 2, 14, 2, 50, 11, 2, 3, 2, 6, 2, 53, 10, 2,
-	13, 2, 14, 2, 54, 3, 2, 3, 2, 3, 3, 3, 3, 5, 3, 61, 10, 3, 3, 4, 3, 4,
-	3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5,
-	3, 5, 3, 5, 3, 5, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 7, 3, 7, 3, 8,
-	3, 8, 3, 8, 3, 8, 3, 9, 3, 9, 3, 9, 3, 9, 3, 9, 3, 10, 3, 10, 3, 10, 3,
-	10, 3, 10, 3, 10, 3, 10, 3, 10, 3, 10, 5, 10, 106, 10, 10, 3, 11, 3, 11,
-	3, 11, 3, 11, 3, 11, 3, 11, 3, 11, 3, 11, 3, 11, 3, 11, 3, 11, 3, 12, 3,
-	12, 3, 12, 3, 12, 3, 12, 3, 13, 3, 13, 3, 13, 3, 13, 3, 14, 3, 14, 3, 14,
-	3, 14, 3, 15, 3, 15, 3, 15, 3, 15, 3, 15, 5, 15, 137, 10, 15, 3, 15, 3,
-	15, 3, 16, 3, 16, 3, 16, 3, 16, 3, 16, 3, 17, 3, 17, 3, 17, 3, 17, 3, 17,
-	3, 18, 3, 18, 3, 18, 3, 18, 3, 18, 3, 19, 3, 19, 3, 19, 3, 19, 3, 19, 3,
-	20, 3, 20, 3, 20, 3, 20, 3, 20, 3, 20, 3, 20, 3, 20, 3, 20, 2, 2, 21, 2,
-	4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 2,
-	3, 3, 2, 3, 4, 2, 162, 2, 41, 3, 2, 2, 2, 4, 60, 3, 2, 2, 2, 6, 62, 3,
-	2, 2, 2, 8, 70, 3, 2, 2, 2, 10, 79, 3, 2, 2, 2, 12, 85, 3, 2, 2, 2, 14,
-	87, 3, 2, 2, 2, 16, 91, 3, 2, 2, 2, 18, 105, 3, 2, 2, 2, 20, 107, 3, 2,
-	2, 2, 22, 118, 3, 2, 2, 2, 24, 123, 3, 2, 2, 2, 26, 127, 3, 2, 2, 2, 28,
-	131, 3, 2, 2, 2, 30, 140, 3, 2, 2, 2, 32, 145, 3, 2, 2, 2, 34, 150, 3,
-	2, 2, 2, 36, 155, 3, 2, 2, 2, 38, 160, 3, 2, 2, 2, 40, 42, 5, 4, 3, 2,
-	41, 40, 3, 2, 2, 2, 42, 43, 3, 2, 2, 2, 43, 41, 3, 2, 2, 2, 43, 44, 3,
-	2, 2, 2, 44, 48, 3, 2, 2, 2, 45, 47, 5, 16, 9, 2, 46, 45, 3, 2, 2, 2, 47,
-	50, 3, 2, 2, 2, 48, 46, 3, 2, 2, 2, 48, 49, 3, 2, 2, 2, 49, 52, 3, 2, 2,
-	2, 50, 48, 3, 2, 2, 2, 51, 53, 5, 38, 20, 2, 52, 51, 3, 2, 2, 2, 53, 54,
-	3, 2, 2, 2, 54, 52, 3, 2, 2, 2, 54, 55, 3, 2, 2, 2, 55, 56, 3, 2, 2, 2,
-	56, 57, 7, 2, 2, 3, 57, 3, 3, 2, 2, 2, 58, 61, 5, 6, 4, 2, 59, 61, 5, 8,
-	5, 2, 60, 58, 3, 2, 2, 2, 60, 59, 3, 2, 2, 2, 61, 5, 3, 2, 2, 2, 62, 63,
-	7, 25, 2, 2, 63, 64, 7, 15, 2, 2, 64, 65, 7, 23, 2, 2, 65, 66, 7, 20, 2,
-	2, 66, 67, 5, 10, 6, 2, 67, 68, 7, 21, 2, 2, 68, 69, 7, 19, 2, 2, 69, 7,
-	3, 2, 2, 2, 70, 71, 7, 25, 2, 2, 71, 72, 7, 22, 2, 2, 72, 73, 7, 15, 2,
-	2, 73, 74, 7, 23, 2, 2, 74, 75, 7, 20, 2, 2, 75, 76, 5, 14, 8, 2, 76, 77,
-	7, 21, 2, 2, 77, 78, 7, 19, 2, 2, 78, 9, 3, 2, 2, 2, 79, 80, 7, 18, 2,
-	2, 80, 81, 7, 25, 2, 2, 81, 82, 7, 16, 2, 2, 82, 83, 5, 12, 7, 2, 83, 84,
-	7, 18, 2, 2, 84, 11, 3, 2, 2, 2, 85, 86, 9, 2, 2, 2, 86, 13, 3, 2, 2, 2,
-	87, 88, 7, 18, 2, 2, 88, 89, 7, 25, 2, 2, 89, 90, 7, 18, 2, 2, 90, 15,
-	3, 2, 2, 2, 91, 92, 7, 25, 2, 2, 92, 93, 7, 16, 2, 2, 93, 94, 5, 18, 10,
-	2, 94, 95, 7, 19, 2, 2, 95, 17, 3, 2, 2, 2, 96, 106, 5, 20, 11, 2, 97,
-	106, 5, 22, 12, 2, 98, 106, 5, 24, 13, 2, 99, 106, 5, 26, 14, 2, 100, 106,
-	5, 28, 15, 2, 101, 106, 5, 30, 16, 2, 102, 106, 5, 32, 17, 2, 103, 106,
-	5, 34, 18, 2, 104, 106, 5, 36, 19, 2, 105, 96, 3, 2, 2, 2, 105, 97, 3,
-	2, 2, 2, 105, 98, 3, 2, 2, 2, 105, 99, 3, 2, 2, 2, 105, 100, 3, 2, 2, 2,
-	105, 101, 3, 2, 2, 2, 105, 102, 3, 2, 2, 2, 105, 103, 3, 2, 2, 2, 105,
-	104, 3, 2, 2, 2, 106, 19, 3, 2, 2, 2, 107, 108, 7, 5, 2, 2, 108, 109, 7,
-	20, 2, 2, 109, 110, 7, 24, 2, 2, 110, 111, 7, 17, 2, 2, 111, 112, 7, 24,
-	2, 2, 112, 113, 7, 17, 2, 2, 113, 114, 7, 24, 2, 2, 114, 115, 7, 17, 2,
-	2, 115, 116, 7, 24, 2, 2, 116, 117, 7, 21, 2, 2, 117, 21, 3, 2, 2, 2, 118,
-	119, 7, 6, 2, 2, 119, 120, 7, 20, 2, 2, 120, 121, 7, 24, 2, 2, 121, 122,
-	7, 21, 2, 2, 122, 23, 3, 2, 2, 2, 123, 124, 7, 7, 2, 2, 124, 125, 7, 20,
-	2, 2, 125, 126, 7, 21, 2, 2, 126, 25, 3, 2, 2, 2, 127, 128, 7, 8, 2, 2,
-	128, 129, 7, 20, 2, 2, 129, 130, 7, 21, 2, 2, 130, 27, 3, 2, 2, 2, 131,
-	132, 7, 9, 2, 2, 132, 133, 7, 20, 2, 2, 133, 136, 7, 24, 2, 2, 134, 135,
-	7, 17, 2, 2, 135, 137, 7, 24, 2, 2, 136, 134, 3, 2, 2, 2, 136, 137, 3,
-	2, 2, 2, 137, 138, 3, 2, 2, 2, 138, 139, 7, 21, 2, 2, 139, 29, 3, 2, 2,
-	2, 140, 141, 7, 10, 2, 2, 141, 142, 7, 20, 2, 2, 142, 143, 7, 24, 2, 2,
-	143, 144, 7, 21, 2, 2, 144, 31, 3, 2, 2, 2, 145, 146, 7, 11, 2, 2, 146,
-	147, 7, 20, 2, 2, 147, 148, 7, 24, 2, 2, 148, 149, 7, 21, 2, 2, 149, 33,
-	3, 2, 2, 2, 150, 151, 7, 12, 2, 2, 151, 152, 7, 20, 2, 2, 152, 153, 7,
-	24, 2, 2, 153, 154, 7, 21, 2, 2, 154, 35, 3, 2, 2, 2, 155, 156, 7, 13,
-	2, 2, 156, 157, 7, 20, 2, 2, 157, 158, 7, 24, 2, 2, 158, 159, 7, 21, 2,
-	2, 159, 37, 3, 2, 2, 2, 160, 161, 7, 25, 2, 2, 161, 162, 7, 16, 2, 2, 162,
-	163, 7, 14, 2, 2, 163, 164, 7, 20, 2, 2, 164, 165, 5, 10, 6, 2, 165, 166,
-	7, 21, 2, 2, 166, 167, 7, 19, 2, 2, 167, 39, 3, 2, 2, 2, 8, 43, 48, 54,
-	60, 105, 136,
+	18, 4, 19, 9, 19, 4, 20, 9, 20, 4, 21, 9, 21, 4, 22, 9, 22, 3, 2, 7, 2,
+	46, 10, 2, 12, 2, 14, 2, 49, 11, 2, 3, 2, 6, 2, 52, 10, 2, 13, 2, 14, 2,
+	53, 3, 2, 7, 2, 57, 10, 2, 12, 2, 14, 2, 60, 11, 2, 3, 2, 7, 2, 63, 10,
+	2, 12, 2, 14, 2, 66, 11, 2, 3, 2, 7, 2, 69, 10, 2, 12, 2, 14, 2, 72, 11,
+	2, 3, 2, 6, 2, 75, 10, 2, 13, 2, 14, 2, 76, 3, 2, 3, 2, 3, 3, 3, 3, 5,
+	3, 83, 10, 3, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 5, 3,
+	5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 6, 3, 6, 3, 6, 3, 6, 3,
+	6, 3, 6, 3, 7, 3, 7, 3, 8, 3, 8, 3, 8, 3, 8, 3, 9, 3, 9, 3, 9, 3, 9, 3,
+	9, 3, 10, 3, 10, 3, 10, 3, 10, 3, 10, 3, 10, 3, 10, 3, 10, 3, 10, 5, 10,
+	128, 10, 10, 3, 11, 3, 11, 3, 11, 3, 11, 3, 11, 3, 11, 3, 11, 3, 11, 3,
+	11, 3, 11, 3, 11, 3, 12, 3, 12, 3, 12, 3, 12, 3, 12, 3, 13, 3, 13, 3, 13,
+	3, 13, 3, 14, 3, 14, 3, 14, 3, 14, 3, 15, 3, 15, 3, 15, 3, 15, 3, 15, 5,
+	15, 159, 10, 15, 3, 15, 3, 15, 3, 16, 3, 16, 3, 16, 3, 16, 3, 16, 3, 17,
+	3, 17, 3, 17, 3, 17, 3, 17, 3, 18, 3, 18, 3, 18, 3, 18, 3, 18, 3, 19, 3,
+	19, 3, 19, 3, 19, 3, 19, 3, 20, 3, 20, 3, 20, 3, 20, 3, 20, 3, 20, 5, 20,
+	189, 10, 20, 3, 20, 3, 20, 3, 20, 3, 21, 7, 21, 195, 10, 21, 12, 21, 14,
+	21, 198, 11, 21, 3, 22, 3, 22, 3, 22, 3, 22, 2, 2, 23, 2, 4, 6, 8, 10,
+	12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 2, 3, 3,
+	2, 3, 4, 2, 199, 2, 51, 3, 2, 2, 2, 4, 82, 3, 2, 2, 2, 6, 84, 3, 2, 2,
+	2, 8, 92, 3, 2, 2, 2, 10, 101, 3, 2, 2, 2, 12, 107, 3, 2, 2, 2, 14, 109,
+	3, 2, 2, 2, 16, 113, 3, 2, 2, 2, 18, 127, 3, 2, 2, 2, 20, 129, 3, 2, 2,
+	2, 22, 140, 3, 2, 2, 2, 24, 145, 3, 2, 2, 2, 26, 149, 3, 2, 2, 2, 28, 153,
+	3, 2, 2, 2, 30, 162, 3, 2, 2, 2, 32, 167, 3, 2, 2, 2, 34, 172, 3, 2, 2,
+	2, 36, 177, 3, 2, 2, 2, 38, 182, 3, 2, 2, 2, 40, 196, 3, 2, 2, 2, 42, 199,
+	3, 2, 2, 2, 44, 46, 5, 42, 22, 2, 45, 44, 3, 2, 2, 2, 46, 49, 3, 2, 2,
+	2, 47, 45, 3, 2, 2, 2, 47, 48, 3, 2, 2, 2, 48, 50, 3, 2, 2, 2, 49, 47,
+	3, 2, 2, 2, 50, 52, 5, 4, 3, 2, 51, 47, 3, 2, 2, 2, 52, 53, 3, 2, 2, 2,
+	53, 51, 3, 2, 2, 2, 53, 54, 3, 2, 2, 2, 54, 58, 3, 2, 2, 2, 55, 57, 5,
+	42, 22, 2, 56, 55, 3, 2, 2, 2, 57, 60, 3, 2, 2, 2, 58, 56, 3, 2, 2, 2,
+	58, 59, 3, 2, 2, 2, 59, 64, 3, 2, 2, 2, 60, 58, 3, 2, 2, 2, 61, 63, 5,
+	16, 9, 2, 62, 61, 3, 2, 2, 2, 63, 66, 3, 2, 2, 2, 64, 62, 3, 2, 2, 2, 64,
+	65, 3, 2, 2, 2, 65, 70, 3, 2, 2, 2, 66, 64, 3, 2, 2, 2, 67, 69, 5, 42,
+	22, 2, 68, 67, 3, 2, 2, 2, 69, 72, 3, 2, 2, 2, 70, 68, 3, 2, 2, 2, 70,
+	71, 3, 2, 2, 2, 71, 74, 3, 2, 2, 2, 72, 70, 3, 2, 2, 2, 73, 75, 5, 38,
+	20, 2, 74, 73, 3, 2, 2, 2, 75, 76, 3, 2, 2, 2, 76, 74, 3, 2, 2, 2, 76,
+	77, 3, 2, 2, 2, 77, 78, 3, 2, 2, 2, 78, 79, 7, 2, 2, 3, 79, 3, 3, 2, 2,
+	2, 80, 83, 5, 6, 4, 2, 81, 83, 5, 8, 5, 2, 82, 80, 3, 2, 2, 2, 82, 81,
+	3, 2, 2, 2, 83, 5, 3, 2, 2, 2, 84, 85, 7, 27, 2, 2, 85, 86, 7, 16, 2, 2,
+	86, 87, 7, 24, 2, 2, 87, 88, 7, 21, 2, 2, 88, 89, 5, 10, 6, 2, 89, 90,
+	7, 22, 2, 2, 90, 91, 7, 20, 2, 2, 91, 7, 3, 2, 2, 2, 92, 93, 7, 27, 2,
+	2, 93, 94, 7, 23, 2, 2, 94, 95, 7, 16, 2, 2, 95, 96, 7, 24, 2, 2, 96, 97,
+	7, 21, 2, 2, 97, 98, 5, 14, 8, 2, 98, 99, 7, 22, 2, 2, 99, 100, 7, 20,
+	2, 2, 100, 9, 3, 2, 2, 2, 101, 102, 7, 19, 2, 2, 102, 103, 7, 27, 2, 2,
+	103, 104, 7, 17, 2, 2, 104, 105, 5, 12, 7, 2, 105, 106, 7, 19, 2, 2, 106,
+	11, 3, 2, 2, 2, 107, 108, 9, 2, 2, 2, 108, 13, 3, 2, 2, 2, 109, 110, 7,
+	19, 2, 2, 110, 111, 7, 27, 2, 2, 111, 112, 7, 19, 2, 2, 112, 15, 3, 2,
+	2, 2, 113, 114, 7, 27, 2, 2, 114, 115, 7, 17, 2, 2, 115, 116, 5, 18, 10,
+	2, 116, 117, 7, 20, 2, 2, 117, 17, 3, 2, 2, 2, 118, 128, 5, 20, 11, 2,
+	119, 128, 5, 22, 12, 2, 120, 128, 5, 24, 13, 2, 121, 128, 5, 26, 14, 2,
+	122, 128, 5, 28, 15, 2, 123, 128, 5, 30, 16, 2, 124, 128, 5, 32, 17, 2,
+	125, 128, 5, 34, 18, 2, 126, 128, 5, 36, 19, 2, 127, 118, 3, 2, 2, 2, 127,
+	119, 3, 2, 2, 2, 127, 120, 3, 2, 2, 2, 127, 121, 3, 2, 2, 2, 127, 122,
+	3, 2, 2, 2, 127, 123, 3, 2, 2, 2, 127, 124, 3, 2, 2, 2, 127, 125, 3, 2,
+	2, 2, 127, 126, 3, 2, 2, 2, 128, 19, 3, 2, 2, 2, 129, 130, 7, 5, 2, 2,
+	130, 131, 7, 21, 2, 2, 131, 132, 7, 25, 2, 2, 132, 133, 7, 18, 2, 2, 133,
+	134, 7, 25, 2, 2, 134, 135, 7, 18, 2, 2, 135, 136, 7, 25, 2, 2, 136, 137,
+	7, 18, 2, 2, 137, 138, 7, 25, 2, 2, 138, 139, 7, 22, 2, 2, 139, 21, 3,
+	2, 2, 2, 140, 141, 7, 6, 2, 2, 141, 142, 7, 21, 2, 2, 142, 143, 7, 25,
+	2, 2, 143, 144, 7, 22, 2, 2, 144, 23, 3, 2, 2, 2, 145, 146, 7, 7, 2, 2,
+	146, 147, 7, 21, 2, 2, 147, 148, 7, 22, 2, 2, 148, 25, 3, 2, 2, 2, 149,
+	150, 7, 8, 2, 2, 150, 151, 7, 21, 2, 2, 151, 152, 7, 22, 2, 2, 152, 27,
+	3, 2, 2, 2, 153, 154, 7, 9, 2, 2, 154, 155, 7, 21, 2, 2, 155, 158, 7, 25,
+	2, 2, 156, 157, 7, 18, 2, 2, 157, 159, 7, 25, 2, 2, 158, 156, 3, 2, 2,
+	2, 158, 159, 3, 2, 2, 2, 159, 160, 3, 2, 2, 2, 160, 161, 7, 22, 2, 2, 161,
+	29, 3, 2, 2, 2, 162, 163, 7, 10, 2, 2, 163, 164, 7, 21, 2, 2, 164, 165,
+	7, 25, 2, 2, 165, 166, 7, 22, 2, 2, 166, 31, 3, 2, 2, 2, 167, 168, 7, 11,
+	2, 2, 168, 169, 7, 21, 2, 2, 169, 170, 7, 25, 2, 2, 170, 171, 7, 22, 2,
+	2, 171, 33, 3, 2, 2, 2, 172, 173, 7, 12, 2, 2, 173, 174, 7, 21, 2, 2, 174,
+	175, 7, 25, 2, 2, 175, 176, 7, 22, 2, 2, 176, 35, 3, 2, 2, 2, 177, 178,
+	7, 13, 2, 2, 178, 179, 7, 21, 2, 2, 179, 180, 7, 25, 2, 2, 180, 181, 7,
+	22, 2, 2, 181, 37, 3, 2, 2, 2, 182, 183, 7, 27, 2, 2, 183, 184, 7, 17,
+	2, 2, 184, 185, 7, 14, 2, 2, 185, 188, 7, 21, 2, 2, 186, 189, 5, 10, 6,
+	2, 187, 189, 5, 14, 8, 2, 188, 186, 3, 2, 2, 2, 188, 187, 3, 2, 2, 2, 189,
+	190, 3, 2, 2, 2, 190, 191, 7, 22, 2, 2, 191, 192, 7, 20, 2, 2, 192, 39,
+	3, 2, 2, 2, 193, 195, 7, 27, 2, 2, 194, 193, 3, 2, 2, 2, 195, 198, 3, 2,
+	2, 2, 196, 194, 3, 2, 2, 2, 196, 197, 3, 2, 2, 2, 197, 41, 3, 2, 2, 2,
+	198, 196, 3, 2, 2, 2, 199, 200, 7, 15, 2, 2, 200, 201, 5, 40, 21, 2, 201,
+	43, 3, 2, 2, 2, 13, 47, 53, 58, 64, 70, 76, 82, 127, 158, 188, 196,
 }
 var deserializer = antlr.NewATNDeserializer(nil)
 var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
 
 var literalNames = []string{
 	"", "'png'", "'jpg'", "'crop'", "'rotate'", "'flipX'", "'flipY'", "'resize'",
-	"'brightness'", "'contrast'", "'saturation'", "'pixelate'", "'save'", "'='",
-	"'.'", "','", "'\"'", "';'", "'('", "')'", "'[]'", "'open'",
+	"'brightness'", "'contrast'", "'saturation'", "'pixelate'", "'save'", "'--'",
+	"'='", "'.'", "','", "'\"'", "';'", "'('", "')'", "'[]'", "'open'", "",
+	"'-'",
 }
 var symbolicNames = []string{
-	"", "", "", "", "", "", "", "", "", "", "", "", "", "ASSIGN", "DOT", "COMMA",
-	"APOS", "SEMICOLON", "OPEN_PARAN", "CLOSED_PARAN", "FOLDER", "OPEN", "NUMBER",
-	"ID", "WHITESPACE",
+	"", "", "", "", "", "", "", "", "", "", "", "", "", "", "ASSIGN", "DOT",
+	"COMMA", "APOS", "SEMICOLON", "OPEN_PARAN", "CLOSED_PARAN", "FOLDER", "OPEN",
+	"NUMBER", "MINUS", "ID", "WHITESPACE",
 }
 
 var ruleNames = []string{
 	"start", "declaration", "openFile", "openFolder", "fileName", "imageType",
 	"folderName", "action_", "actionType", "crop", "rotate", "flipX", "flipY",
 	"resize", "brightness", "contrast", "saturation", "pixelate", "export",
+	"text", "comment",
 }
 var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
 
@@ -144,18 +161,20 @@ const (
 	ImgParserT__9         = 10
 	ImgParserT__10        = 11
 	ImgParserT__11        = 12
-	ImgParserASSIGN       = 13
-	ImgParserDOT          = 14
-	ImgParserCOMMA        = 15
-	ImgParserAPOS         = 16
-	ImgParserSEMICOLON    = 17
-	ImgParserOPEN_PARAN   = 18
-	ImgParserCLOSED_PARAN = 19
-	ImgParserFOLDER       = 20
-	ImgParserOPEN         = 21
-	ImgParserNUMBER       = 22
-	ImgParserID           = 23
-	ImgParserWHITESPACE   = 24
+	ImgParserT__12        = 13
+	ImgParserASSIGN       = 14
+	ImgParserDOT          = 15
+	ImgParserCOMMA        = 16
+	ImgParserAPOS         = 17
+	ImgParserSEMICOLON    = 18
+	ImgParserOPEN_PARAN   = 19
+	ImgParserCLOSED_PARAN = 20
+	ImgParserFOLDER       = 21
+	ImgParserOPEN         = 22
+	ImgParserNUMBER       = 23
+	ImgParserMINUS        = 24
+	ImgParserID           = 25
+	ImgParserWHITESPACE   = 26
 )
 
 // ImgParser rules.
@@ -179,6 +198,8 @@ const (
 	ImgParserRULE_saturation  = 16
 	ImgParserRULE_pixelate    = 17
 	ImgParserRULE_export      = 18
+	ImgParserRULE_text        = 19
+	ImgParserRULE_comment     = 20
 )
 
 // IStartContext is an interface to support dynamic dispatch.
@@ -244,6 +265,29 @@ func (s *StartContext) Declaration(i int) IDeclarationContext {
 	}
 
 	return t.(IDeclarationContext)
+}
+
+func (s *StartContext) AllComment() []ICommentContext {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*ICommentContext)(nil)).Elem())
+	var tst = make([]ICommentContext, len(ts))
+
+	for i, t := range ts {
+		if t != nil {
+			tst[i] = t.(ICommentContext)
+		}
+	}
+
+	return tst
+}
+
+func (s *StartContext) Comment(i int) ICommentContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*ICommentContext)(nil)).Elem(), i)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(ICommentContext)
 }
 
 func (s *StartContext) AllAction_() []IAction_Context {
@@ -336,14 +380,28 @@ func (p *ImgParser) Start() (localctx IStartContext) {
 	var _alt int
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(39)
+	p.SetState(49)
 	p.GetErrorHandler().Sync(p)
 	_alt = 1
 	for ok := true; ok; ok = _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
 		switch _alt {
 		case 1:
+			p.SetState(45)
+			p.GetErrorHandler().Sync(p)
+			_la = p.GetTokenStream().LA(1)
+
+			for _la == ImgParserT__12 {
+				{
+					p.SetState(42)
+					p.Comment()
+				}
+
+				p.SetState(47)
+				p.GetErrorHandler().Sync(p)
+				_la = p.GetTokenStream().LA(1)
+			}
 			{
-				p.SetState(38)
+				p.SetState(48)
 				p.Declaration()
 			}
 
@@ -351,42 +409,72 @@ func (p *ImgParser) Start() (localctx IStartContext) {
 			panic(antlr.NewNoViableAltException(p, nil, nil, nil, nil, nil))
 		}
 
-		p.SetState(41)
+		p.SetState(51)
 		p.GetErrorHandler().Sync(p)
-		_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 0, p.GetParserRuleContext())
+		_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 1, p.GetParserRuleContext())
 	}
-	p.SetState(46)
+	p.SetState(56)
 	p.GetErrorHandler().Sync(p)
-	_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 1, p.GetParserRuleContext())
+	_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 2, p.GetParserRuleContext())
 
 	for _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
 		if _alt == 1 {
 			{
-				p.SetState(43)
+				p.SetState(53)
+				p.Comment()
+			}
+
+		}
+		p.SetState(58)
+		p.GetErrorHandler().Sync(p)
+		_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 2, p.GetParserRuleContext())
+	}
+	p.SetState(62)
+	p.GetErrorHandler().Sync(p)
+	_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 3, p.GetParserRuleContext())
+
+	for _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
+		if _alt == 1 {
+			{
+				p.SetState(59)
 				p.Action_()
 			}
 
 		}
-		p.SetState(48)
+		p.SetState(64)
 		p.GetErrorHandler().Sync(p)
-		_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 1, p.GetParserRuleContext())
+		_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 3, p.GetParserRuleContext())
 	}
-	p.SetState(50)
+	p.SetState(68)
+	p.GetErrorHandler().Sync(p)
+	_la = p.GetTokenStream().LA(1)
+
+	for _la == ImgParserT__12 {
+		{
+			p.SetState(65)
+			p.Comment()
+		}
+
+		p.SetState(70)
+		p.GetErrorHandler().Sync(p)
+		_la = p.GetTokenStream().LA(1)
+	}
+	p.SetState(72)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	for ok := true; ok; ok = _la == ImgParserID {
 		{
-			p.SetState(49)
+			p.SetState(71)
 			p.Export()
 		}
 
-		p.SetState(52)
+		p.SetState(74)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
 	{
-		p.SetState(54)
+		p.SetState(76)
 		p.Match(ImgParserEOF)
 	}
 
@@ -491,20 +579,20 @@ func (p *ImgParser) Declaration() (localctx IDeclarationContext) {
 		}
 	}()
 
-	p.SetState(58)
+	p.SetState(80)
 	p.GetErrorHandler().Sync(p)
-	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 3, p.GetParserRuleContext()) {
+	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 6, p.GetParserRuleContext()) {
 	case 1:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(56)
+			p.SetState(78)
 			p.OpenFile()
 		}
 
 	case 2:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(57)
+			p.SetState(79)
 			p.OpenFolder()
 		}
 
@@ -627,31 +715,31 @@ func (p *ImgParser) OpenFile() (localctx IOpenFileContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(60)
+		p.SetState(82)
 		p.Match(ImgParserID)
 	}
 	{
-		p.SetState(61)
+		p.SetState(83)
 		p.Match(ImgParserASSIGN)
 	}
 	{
-		p.SetState(62)
+		p.SetState(84)
 		p.Match(ImgParserOPEN)
 	}
 	{
-		p.SetState(63)
+		p.SetState(85)
 		p.Match(ImgParserOPEN_PARAN)
 	}
 	{
-		p.SetState(64)
+		p.SetState(86)
 		p.FileName()
 	}
 	{
-		p.SetState(65)
+		p.SetState(87)
 		p.Match(ImgParserCLOSED_PARAN)
 	}
 	{
-		p.SetState(66)
+		p.SetState(88)
 		p.Match(ImgParserSEMICOLON)
 	}
 
@@ -776,35 +864,35 @@ func (p *ImgParser) OpenFolder() (localctx IOpenFolderContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(68)
+		p.SetState(90)
 		p.Match(ImgParserID)
 	}
 	{
-		p.SetState(69)
+		p.SetState(91)
 		p.Match(ImgParserFOLDER)
 	}
 	{
-		p.SetState(70)
+		p.SetState(92)
 		p.Match(ImgParserASSIGN)
 	}
 	{
-		p.SetState(71)
+		p.SetState(93)
 		p.Match(ImgParserOPEN)
 	}
 	{
-		p.SetState(72)
+		p.SetState(94)
 		p.Match(ImgParserOPEN_PARAN)
 	}
 	{
-		p.SetState(73)
+		p.SetState(95)
 		p.FolderName()
 	}
 	{
-		p.SetState(74)
+		p.SetState(96)
 		p.Match(ImgParserCLOSED_PARAN)
 	}
 	{
-		p.SetState(75)
+		p.SetState(97)
 		p.Match(ImgParserSEMICOLON)
 	}
 
@@ -917,23 +1005,23 @@ func (p *ImgParser) FileName() (localctx IFileNameContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(77)
+		p.SetState(99)
 		p.Match(ImgParserAPOS)
 	}
 	{
-		p.SetState(78)
+		p.SetState(100)
 		p.Match(ImgParserID)
 	}
 	{
-		p.SetState(79)
+		p.SetState(101)
 		p.Match(ImgParserDOT)
 	}
 	{
-		p.SetState(80)
+		p.SetState(102)
 		p.ImageType()
 	}
 	{
-		p.SetState(81)
+		p.SetState(103)
 		p.Match(ImgParserAPOS)
 	}
 
@@ -1019,7 +1107,7 @@ func (p *ImgParser) ImageType() (localctx IImageTypeContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(83)
+	p.SetState(105)
 	_la = p.GetTokenStream().LA(1)
 
 	if !(_la == ImgParserT__0 || _la == ImgParserT__1) {
@@ -1124,15 +1212,15 @@ func (p *ImgParser) FolderName() (localctx IFolderNameContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(85)
+		p.SetState(107)
 		p.Match(ImgParserAPOS)
 	}
 	{
-		p.SetState(86)
+		p.SetState(108)
 		p.Match(ImgParserID)
 	}
 	{
-		p.SetState(87)
+		p.SetState(109)
 		p.Match(ImgParserAPOS)
 	}
 
@@ -1241,19 +1329,19 @@ func (p *ImgParser) Action_() (localctx IAction_Context) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(89)
+		p.SetState(111)
 		p.Match(ImgParserID)
 	}
 	{
-		p.SetState(90)
+		p.SetState(112)
 		p.Match(ImgParserDOT)
 	}
 	{
-		p.SetState(91)
+		p.SetState(113)
 		p.ActionType()
 	}
 	{
-		p.SetState(92)
+		p.SetState(114)
 		p.Match(ImgParserSEMICOLON)
 	}
 
@@ -1428,70 +1516,70 @@ func (p *ImgParser) ActionType() (localctx IActionTypeContext) {
 		}
 	}()
 
-	p.SetState(103)
+	p.SetState(125)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
 	case ImgParserT__2:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(94)
+			p.SetState(116)
 			p.Crop()
 		}
 
 	case ImgParserT__3:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(95)
+			p.SetState(117)
 			p.Rotate()
 		}
 
 	case ImgParserT__4:
 		p.EnterOuterAlt(localctx, 3)
 		{
-			p.SetState(96)
+			p.SetState(118)
 			p.FlipX()
 		}
 
 	case ImgParserT__5:
 		p.EnterOuterAlt(localctx, 4)
 		{
-			p.SetState(97)
+			p.SetState(119)
 			p.FlipY()
 		}
 
 	case ImgParserT__6:
 		p.EnterOuterAlt(localctx, 5)
 		{
-			p.SetState(98)
+			p.SetState(120)
 			p.Resize()
 		}
 
 	case ImgParserT__7:
 		p.EnterOuterAlt(localctx, 6)
 		{
-			p.SetState(99)
+			p.SetState(121)
 			p.Brightness()
 		}
 
 	case ImgParserT__8:
 		p.EnterOuterAlt(localctx, 7)
 		{
-			p.SetState(100)
+			p.SetState(122)
 			p.Contrast()
 		}
 
 	case ImgParserT__9:
 		p.EnterOuterAlt(localctx, 8)
 		{
-			p.SetState(101)
+			p.SetState(123)
 			p.Saturation()
 		}
 
 	case ImgParserT__10:
 		p.EnterOuterAlt(localctx, 9)
 		{
-			p.SetState(102)
+			p.SetState(124)
 			p.Pixelate()
 		}
 
@@ -1606,43 +1694,43 @@ func (p *ImgParser) Crop() (localctx ICropContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(105)
+		p.SetState(127)
 		p.Match(ImgParserT__2)
 	}
 	{
-		p.SetState(106)
+		p.SetState(128)
 		p.Match(ImgParserOPEN_PARAN)
 	}
 	{
-		p.SetState(107)
+		p.SetState(129)
 		p.Match(ImgParserNUMBER)
 	}
 	{
-		p.SetState(108)
+		p.SetState(130)
 		p.Match(ImgParserCOMMA)
 	}
 	{
-		p.SetState(109)
+		p.SetState(131)
 		p.Match(ImgParserNUMBER)
 	}
 	{
-		p.SetState(110)
+		p.SetState(132)
 		p.Match(ImgParserCOMMA)
 	}
 	{
-		p.SetState(111)
+		p.SetState(133)
 		p.Match(ImgParserNUMBER)
 	}
 	{
-		p.SetState(112)
+		p.SetState(134)
 		p.Match(ImgParserCOMMA)
 	}
 	{
-		p.SetState(113)
+		p.SetState(135)
 		p.Match(ImgParserNUMBER)
 	}
 	{
-		p.SetState(114)
+		p.SetState(136)
 		p.Match(ImgParserCLOSED_PARAN)
 	}
 
@@ -1741,19 +1829,19 @@ func (p *ImgParser) Rotate() (localctx IRotateContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(116)
+		p.SetState(138)
 		p.Match(ImgParserT__3)
 	}
 	{
-		p.SetState(117)
+		p.SetState(139)
 		p.Match(ImgParserOPEN_PARAN)
 	}
 	{
-		p.SetState(118)
+		p.SetState(140)
 		p.Match(ImgParserNUMBER)
 	}
 	{
-		p.SetState(119)
+		p.SetState(141)
 		p.Match(ImgParserCLOSED_PARAN)
 	}
 
@@ -1848,15 +1936,15 @@ func (p *ImgParser) FlipX() (localctx IFlipXContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(121)
+		p.SetState(143)
 		p.Match(ImgParserT__4)
 	}
 	{
-		p.SetState(122)
+		p.SetState(144)
 		p.Match(ImgParserOPEN_PARAN)
 	}
 	{
-		p.SetState(123)
+		p.SetState(145)
 		p.Match(ImgParserCLOSED_PARAN)
 	}
 
@@ -1951,15 +2039,15 @@ func (p *ImgParser) FlipY() (localctx IFlipYContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(125)
+		p.SetState(147)
 		p.Match(ImgParserT__5)
 	}
 	{
-		p.SetState(126)
+		p.SetState(148)
 		p.Match(ImgParserOPEN_PARAN)
 	}
 	{
-		p.SetState(127)
+		p.SetState(149)
 		p.Match(ImgParserCLOSED_PARAN)
 	}
 
@@ -2067,34 +2155,34 @@ func (p *ImgParser) Resize() (localctx IResizeContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(129)
+		p.SetState(151)
 		p.Match(ImgParserT__6)
 	}
 	{
-		p.SetState(130)
+		p.SetState(152)
 		p.Match(ImgParserOPEN_PARAN)
 	}
 	{
-		p.SetState(131)
+		p.SetState(153)
 		p.Match(ImgParserNUMBER)
 	}
-	p.SetState(134)
+	p.SetState(156)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == ImgParserCOMMA {
 		{
-			p.SetState(132)
+			p.SetState(154)
 			p.Match(ImgParserCOMMA)
 		}
 		{
-			p.SetState(133)
+			p.SetState(155)
 			p.Match(ImgParserNUMBER)
 		}
 
 	}
 	{
-		p.SetState(136)
+		p.SetState(158)
 		p.Match(ImgParserCLOSED_PARAN)
 	}
 
@@ -2193,19 +2281,19 @@ func (p *ImgParser) Brightness() (localctx IBrightnessContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(138)
+		p.SetState(160)
 		p.Match(ImgParserT__7)
 	}
 	{
-		p.SetState(139)
+		p.SetState(161)
 		p.Match(ImgParserOPEN_PARAN)
 	}
 	{
-		p.SetState(140)
+		p.SetState(162)
 		p.Match(ImgParserNUMBER)
 	}
 	{
-		p.SetState(141)
+		p.SetState(163)
 		p.Match(ImgParserCLOSED_PARAN)
 	}
 
@@ -2304,19 +2392,19 @@ func (p *ImgParser) Contrast() (localctx IContrastContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(143)
+		p.SetState(165)
 		p.Match(ImgParserT__8)
 	}
 	{
-		p.SetState(144)
+		p.SetState(166)
 		p.Match(ImgParserOPEN_PARAN)
 	}
 	{
-		p.SetState(145)
+		p.SetState(167)
 		p.Match(ImgParserNUMBER)
 	}
 	{
-		p.SetState(146)
+		p.SetState(168)
 		p.Match(ImgParserCLOSED_PARAN)
 	}
 
@@ -2415,19 +2503,19 @@ func (p *ImgParser) Saturation() (localctx ISaturationContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(148)
+		p.SetState(170)
 		p.Match(ImgParserT__9)
 	}
 	{
-		p.SetState(149)
+		p.SetState(171)
 		p.Match(ImgParserOPEN_PARAN)
 	}
 	{
-		p.SetState(150)
+		p.SetState(172)
 		p.Match(ImgParserNUMBER)
 	}
 	{
-		p.SetState(151)
+		p.SetState(173)
 		p.Match(ImgParserCLOSED_PARAN)
 	}
 
@@ -2526,19 +2614,19 @@ func (p *ImgParser) Pixelate() (localctx IPixelateContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(153)
+		p.SetState(175)
 		p.Match(ImgParserT__10)
 	}
 	{
-		p.SetState(154)
+		p.SetState(176)
 		p.Match(ImgParserOPEN_PARAN)
 	}
 	{
-		p.SetState(155)
+		p.SetState(177)
 		p.Match(ImgParserNUMBER)
 	}
 	{
-		p.SetState(156)
+		p.SetState(178)
 		p.Match(ImgParserCLOSED_PARAN)
 	}
 
@@ -2595,6 +2683,14 @@ func (s *ExportContext) OPEN_PARAN() antlr.TerminalNode {
 	return s.GetToken(ImgParserOPEN_PARAN, 0)
 }
 
+func (s *ExportContext) CLOSED_PARAN() antlr.TerminalNode {
+	return s.GetToken(ImgParserCLOSED_PARAN, 0)
+}
+
+func (s *ExportContext) SEMICOLON() antlr.TerminalNode {
+	return s.GetToken(ImgParserSEMICOLON, 0)
+}
+
 func (s *ExportContext) FileName() IFileNameContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IFileNameContext)(nil)).Elem(), 0)
 
@@ -2605,12 +2701,14 @@ func (s *ExportContext) FileName() IFileNameContext {
 	return t.(IFileNameContext)
 }
 
-func (s *ExportContext) CLOSED_PARAN() antlr.TerminalNode {
-	return s.GetToken(ImgParserCLOSED_PARAN, 0)
-}
+func (s *ExportContext) FolderName() IFolderNameContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IFolderNameContext)(nil)).Elem(), 0)
 
-func (s *ExportContext) SEMICOLON() antlr.TerminalNode {
-	return s.GetToken(ImgParserSEMICOLON, 0)
+	if t == nil {
+		return nil
+	}
+
+	return t.(IFolderNameContext)
 }
 
 func (s *ExportContext) GetRuleContext() antlr.RuleContext {
@@ -2655,32 +2753,254 @@ func (p *ImgParser) Export() (localctx IExportContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(158)
+		p.SetState(180)
 		p.Match(ImgParserID)
 	}
 	{
-		p.SetState(159)
+		p.SetState(181)
 		p.Match(ImgParserDOT)
 	}
 	{
-		p.SetState(160)
+		p.SetState(182)
 		p.Match(ImgParserT__11)
 	}
 	{
-		p.SetState(161)
+		p.SetState(183)
 		p.Match(ImgParserOPEN_PARAN)
 	}
-	{
-		p.SetState(162)
-		p.FileName()
+	p.SetState(186)
+	p.GetErrorHandler().Sync(p)
+	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 9, p.GetParserRuleContext()) {
+	case 1:
+		{
+			p.SetState(184)
+			p.FileName()
+		}
+
+	case 2:
+		{
+			p.SetState(185)
+			p.FolderName()
+		}
+
 	}
 	{
-		p.SetState(163)
+		p.SetState(188)
 		p.Match(ImgParserCLOSED_PARAN)
 	}
 	{
-		p.SetState(164)
+		p.SetState(189)
 		p.Match(ImgParserSEMICOLON)
+	}
+
+	return localctx
+}
+
+// ITextContext is an interface to support dynamic dispatch.
+type ITextContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsTextContext differentiates from other interfaces.
+	IsTextContext()
+}
+
+type TextContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyTextContext() *TextContext {
+	var p = new(TextContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = ImgParserRULE_text
+	return p
+}
+
+func (*TextContext) IsTextContext() {}
+
+func NewTextContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *TextContext {
+	var p = new(TextContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = ImgParserRULE_text
+
+	return p
+}
+
+func (s *TextContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *TextContext) AllID() []antlr.TerminalNode {
+	return s.GetTokens(ImgParserID)
+}
+
+func (s *TextContext) ID(i int) antlr.TerminalNode {
+	return s.GetToken(ImgParserID, i)
+}
+
+func (s *TextContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *TextContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *TextContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(ImgListener); ok {
+		listenerT.EnterText(s)
+	}
+}
+
+func (s *TextContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(ImgListener); ok {
+		listenerT.ExitText(s)
+	}
+}
+
+func (p *ImgParser) Text() (localctx ITextContext) {
+	localctx = NewTextContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 38, ImgParserRULE_text)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	var _alt int
+
+	p.EnterOuterAlt(localctx, 1)
+	p.SetState(194)
+	p.GetErrorHandler().Sync(p)
+	_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 10, p.GetParserRuleContext())
+
+	for _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
+		if _alt == 1 {
+			{
+				p.SetState(191)
+				p.Match(ImgParserID)
+			}
+
+		}
+		p.SetState(196)
+		p.GetErrorHandler().Sync(p)
+		_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 10, p.GetParserRuleContext())
+	}
+
+	return localctx
+}
+
+// ICommentContext is an interface to support dynamic dispatch.
+type ICommentContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsCommentContext differentiates from other interfaces.
+	IsCommentContext()
+}
+
+type CommentContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyCommentContext() *CommentContext {
+	var p = new(CommentContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = ImgParserRULE_comment
+	return p
+}
+
+func (*CommentContext) IsCommentContext() {}
+
+func NewCommentContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *CommentContext {
+	var p = new(CommentContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = ImgParserRULE_comment
+
+	return p
+}
+
+func (s *CommentContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *CommentContext) Text() ITextContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*ITextContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(ITextContext)
+}
+
+func (s *CommentContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *CommentContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *CommentContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(ImgListener); ok {
+		listenerT.EnterComment(s)
+	}
+}
+
+func (s *CommentContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(ImgListener); ok {
+		listenerT.ExitComment(s)
+	}
+}
+
+func (p *ImgParser) Comment() (localctx ICommentContext) {
+	localctx = NewCommentContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 40, ImgParserRULE_comment)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(197)
+		p.Match(ImgParserT__12)
+	}
+	{
+		p.SetState(198)
+		p.Text()
 	}
 
 	return localctx

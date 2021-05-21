@@ -2,26 +2,26 @@
 ``` bash
 go mod vendor
 go build
-./img.exe input.img
+./img.exe input.txt
 ``` 
 
-### Program Structure
+### Program Example
 
 ``` bash
---- Declarations ---
-img1 = open("image1.png");
-img2 = open("image2.png");
+-- Declarations --
+-- Image
+img = open("capture.png");
+-- Folder
+folder[] = open("images"); 
 
---- Actions ---
-img1.rotate(180);
-img2.pixelate(15);
+-- Actions --
+img.rotate(180);
+folder.pixelate(10);
 
---- Exports ---
-img1.save("new_image_1.png");
-img2.save("new_image_2.png");
+-- Exports --
+img.save("new_image_1.png");
+folder.save("export");
 ```
-
-**Note:** Comments are not defined by grammar, yet.
 
 ### Actions available:
 ``` bash
@@ -35,3 +35,10 @@ contrast(percentage float)
 saturation(percentage float)
 pixelate(size int)
 ```
+
+### Errors:
+1. Misspelled command (ex: opn, instead of open)
+2. Missing token
+2. Wrong file name
+3. Using a non delcared variable
+4. Invalid arguments in actions (ex: string instead of float or int)

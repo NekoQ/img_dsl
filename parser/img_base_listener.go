@@ -134,3 +134,15 @@ func (s *BaseImgListener) EnterExport(ctx *ExportContext) {}
 
 // ExitExport is called when production export is exited.
 func (s *BaseImgListener) ExitExport(ctx *ExportContext) {}
+
+// EnterText is called when production text is entered.
+func (s *BaseImgListener) EnterText(ctx *TextContext) {}
+
+// ExitText is called when production text is exited.
+func (s *BaseImgListener) ExitText(ctx *TextContext) {}
+
+// EnterComment is called when production comment is entered.
+func (s *BaseImgListener) EnterComment(ctx *CommentContext) {}
+
+// ExitComment is called when production comment is exited.
+func (s *BaseImgListener) ExitComment(ctx *CommentContext) {}

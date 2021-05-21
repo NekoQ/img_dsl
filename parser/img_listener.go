@@ -65,6 +65,12 @@ type ImgListener interface {
 	// EnterExport is called when entering the export production.
 	EnterExport(c *ExportContext)
 
+	// EnterText is called when entering the text production.
+	EnterText(c *TextContext)
+
+	// EnterComment is called when entering the comment production.
+	EnterComment(c *CommentContext)
+
 	// ExitStart is called when exiting the start production.
 	ExitStart(c *StartContext)
 
@@ -121,4 +127,10 @@ type ImgListener interface {
 
 	// ExitExport is called when exiting the export production.
 	ExitExport(c *ExportContext)
+
+	// ExitText is called when exiting the text production.
+	ExitText(c *TextContext)
+
+	// ExitComment is called when exiting the comment production.
+	ExitComment(c *CommentContext)
 }

@@ -10,12 +10,13 @@ OPEN_PARAN: '(';
 CLOSED_PARAN: ')';
 FOLDER: '[]';
 OPEN: 'open';
-NUMBER: [0-9]+;
-ID: [a-zA-Z_]+ NUMBER;
+NUMBER: MINUS? [0-9]+;
+MINUS: '-';
+ID: [a-zA-Z_/-]+ NUMBER*;
 WHITESPACE: [ \r\n\t]+ -> skip;
 
 // Rules
-start: declaration+ action_* export+ EOF;
+start: (comment* declaration)+ comment* action_* comment* export+ EOF;
 
 // Declaration
 declaration: openFile | openFolder;
@@ -57,4 +58,8 @@ pixelate: 'pixelate' OPEN_PARAN NUMBER CLOSED_PARAN;
 
 // Export
 export:
-	ID DOT 'save' OPEN_PARAN fileName CLOSED_PARAN SEMICOLON;
+	ID DOT 'save' OPEN_PARAN (fileName | folderName) CLOSED_PARAN SEMICOLON;
+
+text: ID*;
+
+comment: '--' text;
