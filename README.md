@@ -25,20 +25,21 @@ folder.save("export");
 
 ### Actions available:
 ``` bash
-rotate(angle float)
+rotate(angle int)
 flipX()
 flipY()
-crop(x0, y0, x1, y1 float)
-resize(width, height float)
-brightness(percentage float)
-contrast(percentage float)
-saturation(percentage float)
+crop(x0, y0, x1, y1 int)
+resize(width, height int)
+brightness(percentage int)
+contrast(percentage int)
+saturation(percentage int)
 pixelate(size int)
 ```
 
 ### Errors:
 1. Misspelled command (ex: opn, instead of open)
 2. Missing token
-2. Wrong file name
-3. Using a non delcared variable
-4. Invalid arguments in actions (ex: string instead of float or int)
+3. Wrong file name
+4. Using a non delcared variable
+5. Invalid arguments in actions (ex: string instead of float or int)
+6. Invalid image type or non image type.

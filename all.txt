@@ -1,0 +1,32 @@
+-- Declarations --
+-- Image
+img = open("img.png");
+img1 = open("img1.png");
+img2 = open("img2.png");
+img3 = open("img3.png");
+img4 = open("img4.png");
+img5 = open("img5.png");
+img6 = open("img6.png");
+img7 = open("img7.png");
+img8 = open("img8.png");
+
+img.rotate(90);
+img1.flipX();
+img2.flipY();
+img3.crop(0, 0, 200, 200);
+img4.resize(200, 200);
+img5.brightness(70);
+img6.contrast(100);
+img7.saturation(100);
+img8.pixelate(30);
+
+
+img.save("image.png");
+img1.save("image1.png");
+img2.save("image2.png");
+img3.save("image3.png");
+img4.save("image4.png");
+img5.save("image5.png");
+img6.save("image6.png");
+img7.save("image7.png");
+img8.save("image8.png");

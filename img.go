@@ -168,6 +168,10 @@ func (l *ImgListener) ExitResize(c *parser.ResizeContext) {
 	}
 	width, _ := strconv.Atoi(params[0].GetText())
 	height, _ := strconv.Atoi(params[1].GetText())
+	if width <= 0 || height <= 0 {
+		fmt.Println("line " + strconv.Itoa(c.GetStart().GetLine()) + " invalid args for resize")
+		os.Exit(1)
+	}
 	l.images[l.currentImage].g.Add(gift.Resize(width, height, gift.LanczosResampling))
 }
 
@@ -211,7 +215,7 @@ func loadImage(filename string) image.Image {
 	defer f.Close()
 	img, _, err := image.Decode(f)
 	if err != nil {
-		log.Fatalf("image.Decode failed: %v", err)
+		log.Fatalf("image.Decode \"%s\" failed: %v", filename, err)
 	}
 	return img
 }
